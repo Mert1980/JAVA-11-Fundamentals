@@ -5,8 +5,8 @@ public class DataTypesApp {
 
         boolean aBoolean = false;
         char aCharacter = 'd';
-        byte aByte = 126;
-        short aShort = 1568;
+        byte aByte = 020;
+        short aShort = 0202;
         int anInteger = 0b0101_1100;
         long aLong = 45631341L;
         float aDecimalNumber = 1256.32F;
