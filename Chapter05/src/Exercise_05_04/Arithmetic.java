@@ -23,7 +23,8 @@ public class Arithmetic {
 
         char myCharacter = 'f';
 
-        System.out.println((char)(myCharacter + y));
+        System.out.println((char)(myCharacter + y)); // return a letter
+        System.out.println((char)myCharacter + y); // return the numerical value of the letter
 
 
         keyboard.close();
