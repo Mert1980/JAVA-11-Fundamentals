@@ -15,6 +15,12 @@ public class DataType {
         int d = 2147483642;
         int e = 2147483645;
 
-        System.out.println(" d * e = " + ((float)d * e));
+        long z = (long)d * e; // correct
+        long z2 = (long)(d * e); // wrong
+
+
+
+        System.out.println("z = " + z);
+        System.out.println("z2 = " + z2);
     }
 }

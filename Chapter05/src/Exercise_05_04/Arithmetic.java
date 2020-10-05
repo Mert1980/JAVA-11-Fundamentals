@@ -21,6 +21,10 @@ public class Arithmetic {
         System.out.println("++x = " + ++x); // 10 + 1 = 11
         System.out.println("x-- = " + x--); // 11
 
+        char myCharacter = 'f';
+
+        System.out.println((char)(myCharacter + y));
+
 
         keyboard.close();
     }
