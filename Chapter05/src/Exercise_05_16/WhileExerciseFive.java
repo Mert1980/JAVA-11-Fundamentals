@@ -5,14 +5,21 @@ import java.util.Scanner;
 public class WhileExerciseFive {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int number;
 
-        while(true){
+        do{
             System.out.println("Enter a number between 0 and 10");
-            int number = scanner.nextInt();
+            number = scanner.nextInt();
+        } while(number < 0 || number > 10);
 
-            if(number > 0 && number < 10){
-                break;
-            }
-        }
+
+//        while(true){
+//            System.out.println("Enter a number between 0 and 10");
+//            int number = scanner.nextInt();
+//
+//            if(number > 0 && number < 10){
+//                break;
+//            }
+//        }
     }
 }
