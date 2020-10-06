@@ -5,9 +5,9 @@ public class WhileExerciseThree {
         int number = 10000;
         int counter = 5;
 
-        while (counter <= 10000){
+        while (counter <= number){
             System.out.println(counter);
-            counter *= 5;
+            counter = counter * 5;
         }
     }
 }
