@@ -9,6 +9,9 @@ public class BmiApplication {
 
         double bmi = BmiUtility.calculatePmi(weight, height);
         BmiUtility.printDiagnose(bmi);
+        BmiUtility.printWeightStatus(bmi);
     }
+
+
 }
 
