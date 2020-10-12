@@ -35,9 +35,9 @@ public class Ex5 {
 
         // check if the total discount is not more than 8.5€
         if (discount < 8.5){
-            System.out.println("You have total " + discount + "€ discount.");
+            System.out.println("You will pay " + (10 - discount) + "€ for membership.");
         } else {
-            System.out.println("You have total 8.5€ discount.");
+            System.out.println("You will pay 1.5€ for membership");
         }
     }
 }
