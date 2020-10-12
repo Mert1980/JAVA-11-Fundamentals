@@ -16,12 +16,12 @@ public class Ex6 {
         int duration = scanner.nextInt();
 
         double interest = 0;
-        int counter = duration;
-        while(counter > 0){
+        int counter = 1;
+        while(counter <= duration){
             interest = capital * (interestRate/100);
             capital+=interest;
-            counter--;
+            System.out.println("Total amount of money after " + counter + " years: " + capital);
+            counter++;
         }
-        System.out.println("Total amount of money after " + duration + " years: " + capital);
     }
 }
