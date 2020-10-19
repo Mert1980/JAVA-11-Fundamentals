@@ -1,3 +1,5 @@
+package Exercise_06_03;
+
 import java.util.Scanner;
 
 public class Exercise_06_03 {
@@ -10,14 +12,22 @@ public class Exercise_06_03 {
         System.out.println(text);
         System.out.println("The length of the text: " + text.length());
 
+        // getBytes
+        byte textArray[] = text.getBytes();
+        System.out.println("text as bytes array " + textArray.length);
+        System.out.println("index zero " + textArray[0]);
+        System.out.println("index one " + textArray[1]);
+        System.out.println("index two " + textArray[2]);
+        System.out.println("index three " + textArray[3]);
+
         // Print the text in capital letters
         System.out.println(text.toUpperCase());
 
         // Print the text in small letters
         System.out.println(text.toLowerCase());
 
-        // Replace all letters 'a' with letter 'o'
-        System.out.println(text.replace('a', 'o'));
+        // Replace all letters 'a' with letter 'e'
+        System.out.println(text.replace('a', 'e'));
 
         // Print the number of 'e's in the text
         int counter = 0;
