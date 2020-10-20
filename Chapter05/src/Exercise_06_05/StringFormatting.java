@@ -18,3 +18,4 @@ public class StringFormatting {
         System.out.println(formatter.toString());
     }
 }
+
