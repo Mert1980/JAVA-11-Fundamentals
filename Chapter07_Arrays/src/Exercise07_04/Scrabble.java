@@ -11,7 +11,7 @@ public class Scrabble {
         System.out.println("Enter a text: ");
         String text = scanner.nextLine();
 
-        char [] textIntoChars = text.toCharArray();
+        char [] textIntoChars = text.toLowerCase().toCharArray();
 
         int totalPoints = 0;
         for (char letter : textIntoChars){
