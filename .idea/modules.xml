@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Chapter06/Chapter06.iml" filepath="$PROJECT_DIR$/Chapter06/Chapter06.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter06_OOP/Chapter06_OOP.iml" filepath="$PROJECT_DIR$/Chapter06_OOP/Chapter06_OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter07_Arrays/Chapter07_Arrays.iml" filepath="$PROJECT_DIR$/Chapter07_Arrays/Chapter07_Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter08_Classes/Chapter08_Classes.iml" filepath="$PROJECT_DIR$/Chapter08_Classes/Chapter08_Classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA-11-Fundamentals.iml" filepath="$PROJECT_DIR$/JAVA-11-Fundamentals.iml" />
     </modules>
   </component>
