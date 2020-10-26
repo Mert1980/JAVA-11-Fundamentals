@@ -3,7 +3,16 @@ package Test_Arrays_Mert_Demirok;
 public class CharArrayTools {
 
     public char[][] generateDictionary(int number){
-        char[][] dictionary = {};
+        char[][] dictionary = new char[26][number];
+        char [] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+        for (int i = 0; i < alphabet.length ; i++) {
+            dictionary[i][0] = alphabet[0];
+            dictionary[i][1] = alphabet[0];
+            dictionary[i][2] = alphabet[i];
+        }
+
+
         return dictionary;
     }
 
