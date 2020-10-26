@@ -25,5 +25,13 @@ public class ArrayApp {
              ) {
             System.out.print(letter + " ");
         }
+
+        System.out.println();
+        char[] arr5 = {'z', 'p', 'A', 'd', 'h', 'S'};
+        char[] sortedArray = charTool.sort(arr5);
+        for (char letter:sortedArray
+        ) {
+            System.out.print(letter + " ");
+        }
     }
 }
