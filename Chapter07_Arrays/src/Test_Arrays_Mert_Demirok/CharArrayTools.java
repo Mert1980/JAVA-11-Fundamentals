@@ -2,6 +2,11 @@ package Test_Arrays_Mert_Demirok;
 
 public class CharArrayTools {
 
+    public char[][] generateDictionary(int number){
+        char[][] dictionary = {};
+        return dictionary;
+    }
+
     public char[] sort(char[] arr){
         char[] temp = {0};
         int counter = arr.length;

@@ -2,9 +2,9 @@ package Test_Arrays_Mert_Demirok;
 
 public class ArrayApp {
     public static void main(String[] args) {
-       /* IntArrayTools tool = new IntArrayTools();
-        int[] arr = {10, 60, 400, 2000};
-        System.out.println(tool.isSorted(arr, "increasing"));
+       IntArrayTools tool = new IntArrayTools();
+        int[] arr = {10, 9, 8, 7};
+        System.out.println(tool.isSorted(arr, "decreasing"));
 
         int[] arr2 = {1, 5, 56, 2, 3, 34, 65};
         int[] sortedArr2 = tool.sort(arr2, "decreasing");
@@ -16,7 +16,7 @@ public class ArrayApp {
         System.out.println();
 
         int[] arr3 = {1, 5, 56, 2, 3, 34, 65};
-        System.out.println(tool.chopSearch(arr3, 33));*/
+        System.out.println(tool.chopSearch(arr3, 33));
 
         CharArrayTools charTool = new CharArrayTools();
         char[] arr4 = {'a', 'b', '(', '/', 'r', '+'};

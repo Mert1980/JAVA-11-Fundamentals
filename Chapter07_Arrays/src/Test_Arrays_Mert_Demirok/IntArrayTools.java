@@ -18,18 +18,18 @@ public class IntArrayTools {
             case "increasing":
                 for (int i = 1; i < arr.length ; i++) {
                     if(arr[i-1] < arr[i]){
-                        return true;
-                    }
+                        continue;
+                    } else return false;
                 }
                 break;
             case "decreasing":
                 for (int i = 1; i < arr.length ; i++) {
                     if(arr[i-1] > arr[i]){
-                        return true;
-                    }
+                        continue;
+                    } else return false;
                 }
         }
-        return false;
+        return true;
     }
 
     public int[] sort(int [] numbers, String direction){
