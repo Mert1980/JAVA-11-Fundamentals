@@ -2,6 +2,17 @@ package Test_Arrays_Mert_Demirok;
 
 public class IntArrayTools {
 
+    public boolean chopSearch(int[] numbers, int value){
+        int[] sortedNumbers = sort(numbers, "increasing");
+        int l = sortedNumbers.length/2;
+        for (int i = sortedNumbers[l] < value ? l : 0; i < sortedNumbers.length; i++) {
+            if(sortedNumbers[i] == value){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean isSorted(int [] arr, String direction){
         switch (direction){
             case "increasing":

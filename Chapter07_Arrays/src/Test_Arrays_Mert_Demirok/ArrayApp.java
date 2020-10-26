@@ -12,5 +12,10 @@ public class ArrayApp {
              ) {
             System.out.print(number + " ");
         }
+
+        System.out.println();
+
+        int[] arr3 = {1, 5, 56, 2, 3, 34, 65};
+        System.out.println(tool.chopSearch(arr3, 33));
     }
 }
