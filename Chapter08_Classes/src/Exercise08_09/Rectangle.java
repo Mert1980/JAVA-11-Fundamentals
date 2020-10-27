@@ -6,18 +6,20 @@ public class Rectangle {
     private int xPos;
     private int yPos;
     public static final int CORNERS;
-    public static int count = 0;
+    public static int count;
 
     static {
         CORNERS = 4;
-        count++;
+        count = 0;
     }
     public Rectangle(){
-        this(1, 1, 1, 1);
+        this(1, 1);
+        count++;
     }
 
     public Rectangle(int height, int width){
         this(height, width, 1, 1);
+
 //        this.height = height;
 //        this.width = width;
     }
