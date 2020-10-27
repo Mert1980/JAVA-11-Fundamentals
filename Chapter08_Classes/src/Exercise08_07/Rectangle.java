@@ -22,6 +22,7 @@ public class Rectangle {
     }
 
     public Rectangle(Rectangle rectangle){
+       // this(this.height, this.width, this.xPos, this.yPos); // copy constructor
         this.height = rectangle.height;
         this.width = rectangle.width;
         this.xPos = rectangle.xPos;
