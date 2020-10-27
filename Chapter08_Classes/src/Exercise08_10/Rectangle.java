@@ -6,15 +6,18 @@ public class Rectangle {
     private int xPos;
     private int yPos;
     public static final int CORNERS;
-    public static int count;
+    private static int count;
 
+    {
+        count++;
+    }
     static {
         CORNERS = 4;
-        count = 0;
+
     }
     public Rectangle(){
         this(1, 1);
-        count++;
+
     }
 
     public Rectangle(int height, int width){
@@ -29,6 +32,7 @@ public class Rectangle {
         this.width = width;
         this.xPos = xPos;
         this.yPos = yPos;
+
     }
 
     public Rectangle(Rectangle rectangle){
@@ -36,6 +40,7 @@ public class Rectangle {
         this.width = rectangle.width;
         this.xPos = rectangle.xPos;
         this.yPos = rectangle.yPos;
+
     }
 
     public static int getCount(){

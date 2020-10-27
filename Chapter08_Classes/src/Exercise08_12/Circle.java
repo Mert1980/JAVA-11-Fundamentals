@@ -8,8 +8,8 @@ public class Circle {
     private static int counter;
 
     // constructors
-    static {
-        counter = 0;
+    {
+        counter++;
     }
 
     public Circle(){
@@ -25,7 +25,7 @@ public class Circle {
         this.radius = radius;
         this.xPos = xPos;
         this.yPos = yPos;
-        counter++;
+
     }
 
     // setters
