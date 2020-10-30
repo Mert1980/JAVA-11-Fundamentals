@@ -37,7 +37,7 @@ public class CarApp {
         Car my3thCar = new Car(5, "red");
         System.out.println(my3thCar);
 
+        System.out.println(Car.getCounter());
 
-
-    }
+        }
 }

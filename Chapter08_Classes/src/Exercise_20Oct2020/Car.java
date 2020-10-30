@@ -5,6 +5,7 @@ public class Car {
     private int horsePower;
     private String color;
     private boolean isLightOn;
+    private static int counter = 0;
 
     // constructors
     public Car(){
@@ -28,6 +29,7 @@ public class Car {
         this.horsePower = horsePower;
         this.color = color;
         this.isLightOn = isLightOn;
+        this.counter++;
     }
 
    // setters
@@ -48,6 +50,10 @@ public class Car {
     }
 
     // getters
+
+    public static int getCounter(){
+        return counter;
+    }
 
     public int getSpeed() {
         return speed;
