@@ -1,7 +1,7 @@
 package Exercise09_01_Aggregations;
 
 public class Circle {
-    final double PI = 3.14;
+    private final double PI = 3.14;
     private int radius;
     private int xPos;
     private int yPos;
@@ -48,5 +48,15 @@ public class Circle {
 
     public static int getCounter(){
         return counter;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "PI=" + PI +
+                ", radius=" + radius +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                '}';
     }
 }

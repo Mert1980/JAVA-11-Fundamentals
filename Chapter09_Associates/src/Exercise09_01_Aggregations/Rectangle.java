@@ -13,18 +13,14 @@ public class Rectangle {
     }
     static {
         CORNERS = 4;
-
     }
+
     public Rectangle(){
         this(1, 1);
-
     }
 
     public Rectangle(int height, int width){
         this(height, width, 1, 1);
-
-//        this.height = height;
-//        this.width = width;
     }
 
     public Rectangle(int height, int width, int xPos, int yPos){
@@ -32,15 +28,10 @@ public class Rectangle {
         this.width = width;
         this.xPos = xPos;
         this.yPos = yPos;
-
     }
 
     public Rectangle(Rectangle rectangle){
-        this.height = rectangle.height;
-        this.width = rectangle.width;
-        this.xPos = rectangle.xPos;
-        this.yPos = rectangle.yPos;
-
+        this(rectangle.height, rectangle.width, rectangle.xPos, rectangle.yPos);
     }
 
     public static int getCount(){

@@ -42,7 +42,12 @@ public class Logo {
         return c.getArea() + r.getArea();
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Logo{" +
+                "rectangle=" + rectangle + "\n"+
+                "     circle=" + circle + "\n"+
+                "     text='" + text + '\'' +
+                '}';
+    }
 }
