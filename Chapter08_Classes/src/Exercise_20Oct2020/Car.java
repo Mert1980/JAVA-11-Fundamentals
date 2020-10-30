@@ -8,11 +8,29 @@ public class Car {
 
     // constructors
     public Car(){
-        this.horsePower = 100;
-        this.color = "white";
+        this(0, 100, "white", false);
     }
 
-    // setters
+    public Car(String color){
+        this(0, 100, color, false);
+    }
+
+    public Car(int horsePower){
+        this(0, horsePower, "white", false);
+    }
+
+    public Car(int speed, String color){
+       this(speed, 100, color , false);
+    }
+
+    public Car(int speed, int horsePower, String color, boolean isLightOn){
+        this.speed = speed;
+        this.horsePower = horsePower;
+        this.color = color;
+        this.isLightOn = isLightOn;
+    }
+
+   // setters
     public void setSpeed(int speed) {
         this.speed = speed;
     }
