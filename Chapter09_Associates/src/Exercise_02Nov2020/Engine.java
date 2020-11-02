@@ -19,7 +19,9 @@ public class Engine {
 
     //methods
     public void burnFuel(int amount){
-        this.fuel-=amount;
+        if(this.fuel >= amount){
+            this.fuel-=amount;
+        }
     }
 
     public void reFuel(int amount){

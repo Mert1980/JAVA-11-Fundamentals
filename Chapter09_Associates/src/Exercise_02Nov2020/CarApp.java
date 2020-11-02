@@ -11,5 +11,15 @@ public class CarApp {
 
         System.out.println(car1);
         System.out.println(car2);
+
+        Car car3 = new Car("Mercedes", new Color("White"));
+
+        car3.accelerate(20); // You can not drive the car without a dreiver!
+        car3.setDriver(new Person("Mert", 30));
+        car3.accelerate(20); // You are run out of fuel! Please fill up the fuel tank.
+        car3.getEngine().setFuel(10);
+        car3.accelerate(20); // You don't have enough fuel!
+        car3.getEngine().reFuel(10);
+        car3.accelerate(20); // Drive safe!
     }
 }

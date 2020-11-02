@@ -7,6 +7,13 @@ public class Car {
     private Engine engine;
     private Person driver;
 
+    public Car(String brand, Color color){
+        this.brand = brand;
+        this.speed = 0;
+        this.color = color;
+        this.engine = new Engine();
+    }
+
     public Car(String brand, Color color, Person driver){
         this.brand = brand;
         this.speed = RandomGenerator.getRandomNumber(100, 300);
@@ -58,11 +65,33 @@ public class Car {
     }
 
     public void accelerate(int amount){
-        this.speed+=amount;
+        if(this.driver == null){
+            this.speed = 0;
+            System.out.println("You can not drive the car without a dreiver!");
+            return;
+        }
+        if(this.engine.getFuel() == 0){
+            this.speed = 0;
+            System.out.println("You are run out of fuel! Please fill up the fuel tank.");
+            return;
+        }
+        if(this.engine.getFuel() >= amount){
+            this.speed+=amount;
+            engine.burnFuel(amount);
+            System.out.println("Drive safe!");
+        } else {
+            System.out.println("You don't have enough fuel!");
+        }
     }
 
-    public void repaint(Color color){
+    public int repaint(Color color){
+        int price = 0;
         this.color = color;
+        for (int rgb:color.getRgb()
+             ) {
+            price+=rgb;
+        }
+        return price;
     }
 
     @Override
