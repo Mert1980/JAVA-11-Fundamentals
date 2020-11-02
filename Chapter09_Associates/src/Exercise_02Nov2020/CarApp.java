@@ -12,6 +12,7 @@ public class CarApp {
         System.out.println(car1);
         System.out.println(car2);
 
+        System.out.println();
         Car car3 = new Car("Mercedes", new Color("White"));
 
         car3.accelerate(20); // You can not drive the car without a dreiver!
@@ -21,5 +22,13 @@ public class CarApp {
         car3.accelerate(20); // You don't have enough fuel!
         car3.getEngine().reFuel(10);
         car3.accelerate(20); // Drive safe!
+
+        System.out.println();
+        Car car4 = new Car(3);
+        car4.addPassenger(new Person("Kagan", 13));
+        car4.addPassenger(new Person("Almira", 3));
+        car4.addPassenger(new Person("Asena", 40));
+        car4.addPassenger(new Person("Asena", 40));
+        car4.getPassengers();
     }
 }

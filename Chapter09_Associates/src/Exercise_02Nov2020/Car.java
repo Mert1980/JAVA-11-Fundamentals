@@ -6,6 +6,11 @@ public class Car {
     private Color color;
     private Engine engine;
     private Person driver;
+    private Person[] seats;
+
+    public Car(int numberOfSeats){
+       this.seats = new Person[numberOfSeats];
+    }
 
     public Car(String brand, Color color){
         this.brand = brand;
@@ -43,6 +48,14 @@ public class Car {
         return driver;
     }
 
+    public void getPassengers(){
+        System.out.println(this.seats.length == 0 ? "" : "Passengers:");
+        for (Person person:this.seats
+             ) {
+            System.out.println(person.getName());
+        }
+    }
+
     //setters
     public void setBrand(String brand) {
         this.brand = brand;
@@ -62,6 +75,20 @@ public class Car {
 
     public void setDriver(Person driver) {
         this.driver = driver;
+    }
+
+    public void setSeats(Person[] seats) {
+        this.seats = seats;
+    }
+
+    // methods
+    public void addPassenger(Person person){
+        for (int i = 0; i < seats.length; i++) {
+            if(seats[i] == null){
+                seats[i] = person;
+                break;
+            }
+        }
     }
 
     public void accelerate(int amount){
