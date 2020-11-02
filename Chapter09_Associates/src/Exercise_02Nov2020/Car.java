@@ -22,4 +22,15 @@ public class Car {
     public void repaint(Color color){
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", speed=" + speed +
+                ", color=" + color +
+                ", engine=" + engine +
+                ", driver=" + driver +
+                '}';
+    }
 }
