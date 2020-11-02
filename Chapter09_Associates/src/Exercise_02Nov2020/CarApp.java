@@ -1,5 +1,7 @@
 package Exercise_02Nov2020;
 
+import java.util.Collections;
+
 public class CarApp {
     public static void main(String[] args) {
         Car car1 = new Car("Volvo", new Color("Yellow"), new Person("Mert", 40));
@@ -24,11 +26,17 @@ public class CarApp {
         car3.accelerate(20); // Drive safe!
 
         System.out.println();
-        Car car4 = new Car(3);
+        Car car4 = new Car(4);
         car4.addPassenger(new Person("Kagan", 13));
         car4.addPassenger(new Person("Almira", 3));
         car4.addPassenger(new Person("Asena", 40));
-        car4.addPassenger(new Person("Asena", 40));
+        car4.addPassenger(new Person("Mert", 45));
         car4.getPassengers();
+
+        System.out.println();
+        car4.sortPassengers();
+        car4.getPassengers();
+
+
     }
 }

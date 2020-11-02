@@ -1,5 +1,9 @@
 package Exercise_02Nov2020;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Car {
     private String brand;
     private int speed;
@@ -82,6 +86,10 @@ public class Car {
     }
 
     // methods
+    public void sortPassengers(){
+        Arrays.sort(this.seats, new SortByAge());
+    }
+
     public void addPassenger(Person person){
         for (int i = 0; i < seats.length; i++) {
             if(seats[i] == null){
@@ -94,7 +102,7 @@ public class Car {
     public void accelerate(int amount){
         if(this.driver == null){
             this.speed = 0;
-            System.out.println("You can not drive the car without a dreiver!");
+            System.out.println("You can not drive the car without a driver!");
             return;
         }
         if(this.engine.getFuel() == 0){
@@ -130,5 +138,11 @@ public class Car {
                 ", engine=" + engine +
                 ", driver=" + driver +
                 '}';
+    }
+}
+
+class SortByAge implements Comparator<Person>{
+    public int compare(Person a, Person b){
+        return b.getAge() - a.getAge();
     }
 }
