@@ -7,11 +7,11 @@ public class Car {
     private Engine engine;
     private Person driver;
 
-    public Car(String brand, int speed, Color color, Engine engine, Person driver){
+    public Car(String brand, int speed, Color color, Person driver){
         this.brand = brand;
         this.speed = speed;
         this.color = color;
-        this.engine = engine;
+        this.engine = new Engine(60);
         this.driver = driver;
     }
 
