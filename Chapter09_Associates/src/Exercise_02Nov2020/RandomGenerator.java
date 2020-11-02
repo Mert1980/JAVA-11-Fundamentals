@@ -7,5 +7,4 @@ public class RandomGenerator {
         Random rand = new Random();
         return rand.nextInt(max - min) + min;
     }
-
 }

@@ -1,8 +1,6 @@
 package Exercise_02Nov2020;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Car {
     private String brand;
@@ -87,7 +85,7 @@ public class Car {
 
     // methods
     public void sortPassengers(){
-        Arrays.sort(this.seats, new SortByAge());
+        Arrays.sort(this.seats, new PersonAgeComparator());
     }
 
     public void addPassenger(Person person){
@@ -141,8 +139,4 @@ public class Car {
     }
 }
 
-class SortByAge implements Comparator<Person>{
-    public int compare(Person a, Person b){
-        return b.getAge() - a.getAge();
-    }
-}
+
