@@ -7,7 +7,7 @@ public class Rectangle {
     private int yPos;
     public static final int CORNERS;
     private static int count;
-
+    public final String DESCRIPTION = "Rectangle";
     {
         count++;
     }
