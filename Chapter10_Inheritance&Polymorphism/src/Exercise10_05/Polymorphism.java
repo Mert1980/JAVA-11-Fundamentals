@@ -8,7 +8,5 @@ public class Polymorphism {
 
         rect.setWidth(5);
         System.out.println(rect.getHeight());
-
-
     }
 }
