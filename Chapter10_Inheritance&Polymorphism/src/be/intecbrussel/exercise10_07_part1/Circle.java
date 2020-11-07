@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise10_07;
+package be.intecbrussel.exercise10_07_part1;
 
 public class Circle extends Shape{
     private final double PI = 3.14;

@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise10_07;
+package be.intecbrussel.exercise10_07_part1;
 
 public class Triangle extends Shape{
     public static final int ANGLES = 3;

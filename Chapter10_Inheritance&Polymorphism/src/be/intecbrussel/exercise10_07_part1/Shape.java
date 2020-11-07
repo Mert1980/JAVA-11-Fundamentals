@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise10_07;
+package be.intecbrussel.exercise10_07_part1;
 
 public abstract class Shape {
     private int xPos;
