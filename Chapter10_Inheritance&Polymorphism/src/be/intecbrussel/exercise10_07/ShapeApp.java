@@ -24,6 +24,15 @@ public class ShapeApp {
 
         Shape isoScTr = new IsoScelesTriangle(6, 4);
         System.out.println(isoScTr.getPerimeter());
+        System.out.println();
+
+        // counters
+        System.out.println("Shape: " + Shape.getCount()); // Shape: 6
+        System.out.println("Circle: " + Circle.getCount()); // Circle: 2
+        System.out.println("Rectangle: " + Rectangle.getCount()); // Rectangle: 0
+        System.out.println("Square: " + Square.getCount()); // Square: 0
+        System.out.println("Triangle: " + Triangle.getCount()); // Triangle: 4
+        System.out.println("IsoScelesTriangle: " + IsoScelesTriangle.getCount()); // IsoScelesTriangle: 1
 
     }
 }
