@@ -27,6 +27,7 @@ public class Rectangle extends Shape{
         this.height = height;
         this.width = width;
         super.setPosition(xPos, yPos);
+        count++;
     }
 
     public Rectangle(Rectangle rectangle){

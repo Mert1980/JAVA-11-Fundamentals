@@ -9,19 +9,22 @@ public class Square extends Rectangle{
     }
 
     public Square(){
-        super();
+        this(1, 1, 1);
     }
 
     public Square(int side){
-        super(side, side);
+        this(side, 1, 1);
     }
 
     public Square(int side, int x, int y){
-        super(side, side, x, y);
+        this.setSide(side);
+        this.setX(x);
+        this.setY(y);
+        count++;
     }
 
     public Square(Square sq){
-        super(sq.getSide(), sq.getSide());
+        this(sq.getSide(), sq.getX(), sq.getY());
     }
 
     public static int getCount(){
