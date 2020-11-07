@@ -34,5 +34,8 @@ public class ShapeApp {
         System.out.println("Triangle: " + Triangle.getCount()); // Triangle: 4
         System.out.println("IsoScelesTriangle: " + IsoScelesTriangle.getCount()); // IsoScelesTriangle: 1
 
+        Shape s = new Circle();
+        System.out.println(s instanceof Triangle); // false
+        System.out.println(s instanceof Circle); // true
     }
 }
