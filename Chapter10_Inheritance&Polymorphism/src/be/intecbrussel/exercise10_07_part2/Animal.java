@@ -12,6 +12,9 @@ public abstract class Animal {
     }
 
     public String getName() {
+        if(name.isEmpty()){
+            return "I have no name!";
+        }
         return name;
     }
 
@@ -22,4 +25,6 @@ public abstract class Animal {
     public abstract void move();
 
     public abstract void makeNoise();
+
+
 }
