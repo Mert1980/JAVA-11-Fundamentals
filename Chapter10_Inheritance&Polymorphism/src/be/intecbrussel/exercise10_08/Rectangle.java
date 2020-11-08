@@ -92,6 +92,11 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public int hashCode(){
+        return super.hashCode() + height * 17 + width * 23;
+    }
+
+    @Override
     public String toString() {
         return "Rectangle{" +
                 "height=" + height +

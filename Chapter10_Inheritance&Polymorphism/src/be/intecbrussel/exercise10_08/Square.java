@@ -41,6 +41,16 @@ public class Square extends Rectangle {
     }
 
     @Override
+    public void setHeight(int height){
+        setSide(height);
+    }
+
+    @Override
+    public void setWidth(int width){
+        setSide(width);
+    }
+
+    @Override
     public boolean equals(Object compared){
         // if the variables are located in the same position, they are equal
         if(this == compared){
@@ -55,9 +65,9 @@ public class Square extends Rectangle {
 
         // if the values of the object variables are equal, the objects are equal
         if(this.getHeight() == comparedSquare.getHeight() &&
-            this.getWidth() == comparedSquare.getWidth() &&
-            this.getX() == comparedSquare.getX() &&
-            this.getY() == comparedSquare.getY()){
+                this.getWidth() == comparedSquare.getWidth() &&
+                this.getX() == comparedSquare.getX() &&
+                this.getY() == comparedSquare.getY()){
             return true;
         }
         // otherwise the objects are not equal
@@ -65,12 +75,7 @@ public class Square extends Rectangle {
     }
 
     @Override
-    public void setHeight(int height){
-        setSide(height);
-    }
-
-    @Override
-    public void setWidth(int width){
-        setSide(width);
+    public int hashCode(){
+        return super.hashCode() + getSide() * 29+ getSide() * 31;
     }
 }

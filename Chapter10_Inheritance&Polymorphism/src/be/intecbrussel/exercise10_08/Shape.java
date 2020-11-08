@@ -61,6 +61,11 @@ public abstract class Shape {
         return false;
     };
 
+    @Override
+    public int hashCode(){
+        return xPos * 7 + yPos * 13;
+    }
+
     public static int getCount(){
         return count;
     }

@@ -77,6 +77,11 @@ public class Circle extends Shape {
     }
 
     @Override
+    public int hashCode(){
+        return super.hashCode() + radius * 37 + radius * 41;
+    }
+
+    @Override
     public String toString() {
         return "Circle{" +
                 "PI=" + PI +

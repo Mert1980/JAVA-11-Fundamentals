@@ -60,4 +60,9 @@ public class IsoScelesTriangle extends Triangle {
         // otherwise the objects are not equal
         return false;
     }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode() + getHeight() * 59 + getWidth() * 61 + getPerpendicular() * 67;
+    }
 }

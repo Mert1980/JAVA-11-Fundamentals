@@ -92,6 +92,11 @@ public class Triangle extends Shape {
     }
 
     @Override
+    public int hashCode(){
+        return super.hashCode() + height * 43 + width * 47 + perpendicular * 53;
+    }
+
+    @Override
     public String toString() {
         return "Triangle{" +
                 "height=" + height +

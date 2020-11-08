@@ -30,10 +30,16 @@ public class ShapeApp {
         System.out.println(isoScelesTriangle.equals(isoScelesTriangle2)); // true
 
         System.out.println();
-        circle2.setRadius(6);
-        System.out.println(circle.equals(circle2)); // false
+        /*circle2.setRadius(6);
+        System.out.println(circle.equals(circle2)); // false*/
 
-        Circle circle3 = new Circle();
-        System.out.println(circle.equals(circle3)); // false
+        // before overriding hasCode() method
+        System.out.println(circle.hashCode()); // 2081303229
+        System.out.println(circle2.hashCode()); // 1223685984
+
+        // after overriding hasCode() method
+        System.out.println(circle.hashCode()); // 450
+        System.out.println(circle2.hashCode()); // 450
+
     }
 }
