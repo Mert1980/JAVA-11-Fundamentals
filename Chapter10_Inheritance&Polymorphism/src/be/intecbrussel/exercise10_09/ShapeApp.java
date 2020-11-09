@@ -14,7 +14,12 @@ public class ShapeApp {
             if(shape instanceof Square){
                 Square sq = (Square)shape;
                 System.out.println("Side= " + sq.getSide());
-            } else if(shape instanceof IsoScelesTriangle){
+            }
+            /* if we check "shape instanceof Triangle" before checking "shape instanceof IsoScelesTriangle"
+            "Hashcode= " + isoTrg.hashCode() will never be printed.
+            Because IsoScelesTriangle is not only the instanceof IsoScelesTriangle but also an instanceof Triangle
+            So order matters! */
+            else if(shape instanceof IsoScelesTriangle){
                 IsoScelesTriangle isoTrg = (IsoScelesTriangle) shape;
                 System.out.println("Hashcode= " + isoTrg.hashCode());
             } else if(shape instanceof Triangle){
