@@ -11,6 +11,12 @@ public class Drawing {
         this.size = 0;
     }
 
+    // getter
+
+    public int getSize() {
+        return size;
+    }
+
     public void add(Shape shape){
         if(isPresent(shape)){
             System.out.println(shape + " is already in the drawing. Try another one!");
