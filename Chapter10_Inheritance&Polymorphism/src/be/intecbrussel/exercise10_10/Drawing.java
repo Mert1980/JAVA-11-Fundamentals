@@ -60,7 +60,7 @@ public class Drawing {
         int index = findIndexOfShape(shape);
         this.shapes[index] = null;
 
-        // if the removed shape is not at the end of the array, move the last shape to the index of removed
+        // move the last shape to the index of removed
         adjustArray(index);
         this.size--;
     }
@@ -80,12 +80,14 @@ public class Drawing {
             // if the array is full, move the last shape to the index of removed shape
             if(this.shapes[this.shapes.length -1] != null){
                 this.shapes[index] = this.shapes[this.shapes.length -1];
+                this.shapes[this.shapes.length -1] = null;
                 break;
             }
             // if the array is not full move the last non-null shape to the index of removed shape
             if(this.shapes[i] == null){
                 // the index of the last shape is one index before the first null object
                 this.shapes[index] = this.shapes[i-1];
+                this.shapes[i-1] = null;
                 break;
             }
         }
@@ -105,6 +107,7 @@ public class Drawing {
         return "Drawing{" +
                 "shapes=" + Arrays.toString(shapes) +
                 ", size=" + size +
+                ", length=" + this.shapes.length +
                 '}';
     }
 }
