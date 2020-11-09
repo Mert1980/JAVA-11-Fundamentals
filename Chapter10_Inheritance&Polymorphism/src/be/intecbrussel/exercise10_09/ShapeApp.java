@@ -8,12 +8,30 @@ public class ShapeApp {
         for (Shape shape:shapes
              ) {
             System.out.println(shape);
+            System.out.println("Area= " + shape.getArea());
+            System.out.println("Perimeter= " + shape.getPerimeter());
+
+            if(shape instanceof Square){
+                Square sq = (Square)shape;
+                System.out.println("Side= " + sq.getSide());
+            } else if(shape instanceof IsoScelesTriangle){
+                IsoScelesTriangle isoTrg = (IsoScelesTriangle) shape;
+                System.out.println("Hashcode= " + isoTrg.hashCode());
+            } else if(shape instanceof Triangle){
+                Triangle triangle = (Triangle) shape;
+                System.out.println("Perpendicular= " + triangle.getPerpendicular());
+            }  else if(shape instanceof Circle){
+                Circle circle = (Circle) shape;
+                System.out.println("Radius= " + circle.getRadius());
+            }
+            System.out.println();
         }
     }
 
     public static void fillShapesWithRandomFigures (Shape[] shapes){
         for (int i = 0; i < shapes.length; i++) {
-            int randomInt = RandomGenerator.getNextInt(1, 5);
+            int randomInt = RandomGenerator.getNextInt(1, 6);
+            System.out.println(randomInt);
             shapes[i] = selectRandomFigures(randomInt);
         }
     }
