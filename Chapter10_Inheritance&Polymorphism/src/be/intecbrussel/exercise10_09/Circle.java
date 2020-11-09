@@ -1,0 +1,93 @@
+package be.intecbrussel.exercise10_09;
+
+public class Circle extends Shape {
+    private final double PI = 3.14;
+    private int radius;
+    private static int counter;
+
+    // constructors
+    {
+        counter++;
+    }
+
+    public Circle(){
+        this(1);
+    }
+
+    public Circle(int radius){
+        this(radius, 1, 1);
+    }
+
+    public Circle(int radius, int xPos, int yPos){
+        this.radius = radius;
+        super.setPosition(xPos, yPos);
+    }
+
+    public Circle(Circle circle){
+        this(circle.getRadius(), circle.getX(), circle.getY());
+    }
+
+    // setters
+    public void setRadius(int radius){
+        this.radius = radius;
+    }
+
+    // getters
+    public int getRadius(){
+        return this.radius;
+    }
+
+    public double getArea(){
+        return this.radius * this.radius * PI;
+    }
+
+    public double getPerimeter(){
+        return 2 * PI * this.radius;
+    }
+
+    public void grow(int d){
+        this.radius = this.radius + Math.abs(d);
+    }
+
+    public static int getCount(){
+        return counter;
+    }
+
+    @Override
+    public boolean equals(Object compared){
+        // if the variables are located in the same position, they are equal
+        if(this == compared){
+            return true;
+        }
+        // if the compared object is not of type Circle, the objects are not equal
+        if(!(compared instanceof Circle)){
+            return false;
+        }
+        // convert the object into a Circle object
+        Circle comparedCircle = (Circle) compared;
+
+        // if the values of the object variables are equal, the objects are equal
+        if(this.radius == comparedCircle.radius &&
+           this.getX() == comparedCircle.getX() &&
+           this.getY() == comparedCircle.getY()){
+           return true;
+        }
+        // otherwise the objects are not equal
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode() + radius * 37 + radius * 41;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "PI=" + PI +
+                ", radius=" + radius +
+                ", xPos=" + super.getX() +
+                ", yPos=" + super.getY() +
+                '}';
+    }
+}
