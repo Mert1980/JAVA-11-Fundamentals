@@ -12,7 +12,6 @@ public class Drawing {
     }
 
     // getter
-
     public int getSize() {
         return size;
     }
@@ -23,8 +22,18 @@ public class Drawing {
             return;
         }
         int index = getFreeLocation();
-        this.shapes[index] = shape;
-        this.size++;
+        // if array is not full, add shape
+        if(index != -1){
+            this.shapes[index] = shape;
+            this.size++;
+        }
+        // else if array is full increase the size of the array and add shape
+        if(index == -1){
+            this.shapes = Arrays.copyOf(this.shapes, this.shapes.length + size);
+            index = getFreeLocation();
+            this.shapes[index] = shape;
+            this.size++;
+        }
     }
 
     private boolean isPresent(Shape shape){
@@ -44,7 +53,7 @@ public class Drawing {
                 return freeLocation;
             }
         }
-        return freeLocation;
+        return -1;
     }
 
     public void remove(Shape shape){
@@ -73,7 +82,7 @@ public class Drawing {
                 this.shapes[index] = this.shapes[this.shapes.length -1];
                 break;
             }
-
+            // if the array is not full move the last non-null shape to the index of removed shape
             if(this.shapes[i] == null){
                 // the index of the last shape is one index before the first null object
                 this.shapes[index] = this.shapes[i-1];
