@@ -70,6 +70,15 @@ public class Drawing {
         }
     }
 
+    public void clear(){
+        int index = 0;
+        while(this.shapes[index] != null){
+            this.shapes[index] = null;
+            index+=1;
+        }
+        this.size = 0;
+    }
+
     @Override
     public String toString() {
         return "Drawing{" +
