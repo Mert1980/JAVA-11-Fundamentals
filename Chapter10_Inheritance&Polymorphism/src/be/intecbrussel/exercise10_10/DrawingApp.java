@@ -10,6 +10,7 @@ public class DrawingApp {
         Shape triangle = new Triangle(20, 30, 30);
         Shape isoTrg = new IsoScelesTriangle(34, 45, 20, 20);
 
+
         drawing.add(circle);
         drawing.add(rect);
         drawing.add(circle); // try to add circle 2nd time. This gives a warning

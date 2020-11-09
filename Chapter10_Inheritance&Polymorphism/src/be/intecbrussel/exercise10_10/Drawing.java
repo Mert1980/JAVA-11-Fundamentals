@@ -7,7 +7,7 @@ public class Drawing {
     private int size; // holds the number of saved figures
 
     public Drawing(){
-        this.shapes = new Shape[10];
+        this.shapes = new Shape[5];
         this.size = 0;
     }
 
@@ -68,6 +68,12 @@ public class Drawing {
     public void adjustArray(int index){
         // start loop from the index of the removed shape
         for (int i = index+1; i < this.shapes.length; i++) {
+            // if the array is full, move the last shape to the index of removed shape
+            if(this.shapes[this.shapes.length -1] != null){
+                this.shapes[index] = this.shapes[this.shapes.length -1];
+                break;
+            }
+
             if(this.shapes[i] == null){
                 // the index of the last shape is one index before the first null object
                 this.shapes[index] = this.shapes[i-1];
@@ -78,7 +84,7 @@ public class Drawing {
 
     public void clear(){
         int index = 0;
-        while(this.shapes[index] != null){
+        while(index < this.shapes.length && this.shapes[index] != null ){
             this.shapes[index] = null;
             index+=1;
         }
