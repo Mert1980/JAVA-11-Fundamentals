@@ -11,6 +11,7 @@ public class ColorApp {
         printColor(color2); // GREEN 3 Green
 
         Color color3 = RED;
+
         System.out.println(color3); // RED
 
         System.out.println(color1); // RED
