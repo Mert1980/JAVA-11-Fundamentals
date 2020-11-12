@@ -15,6 +15,5 @@ public class CoinApp {
         }
         System.out.println("Total value: " + total);
 
-
     }
 }
