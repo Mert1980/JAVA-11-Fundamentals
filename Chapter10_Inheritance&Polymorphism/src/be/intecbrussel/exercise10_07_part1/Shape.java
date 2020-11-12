@@ -10,8 +10,7 @@ public abstract class Shape {
     }
 
     public Shape(int x, int y){
-        this.xPos = x;
-        this.yPos = y;
+        setPosition(x, y);
         count++;
     }
 
@@ -32,8 +31,8 @@ public abstract class Shape {
     }
 
     public void setPosition(int x , int y){
-        this.xPos = x;
-        this.yPos = y;
+        setX(x);
+        setY(y);
     }
 
     public abstract double getArea();

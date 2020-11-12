@@ -1,11 +1,13 @@
 package be.intecbrussel.exercise10_07_part1;
 
 public class Rectangle extends Shape{
-    private int height;
-    private int width;
     public static final int CORNERS;
+    public static final int ANGLES = 4;
     private static int count;
     public final String DESCRIPTION = "Rectangle";
+
+    private int height;
+    private int width;
 
     {
         count++;
@@ -24,8 +26,8 @@ public class Rectangle extends Shape{
     }
 
     public Rectangle(int height, int width, int xPos, int yPos){
-        this.height = height;
-        this.width = width;
+        setHeight(height);
+        setWidth(width);
         super.setPosition(xPos, yPos);
         count++;
     }

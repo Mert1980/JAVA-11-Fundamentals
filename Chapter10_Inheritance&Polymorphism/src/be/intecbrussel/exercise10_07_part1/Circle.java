@@ -1,6 +1,7 @@
 package be.intecbrussel.exercise10_07_part1;
 
 public class Circle extends Shape{
+    public static final int ANGLES = 0;
     private final double PI = 3.14;
     private int radius;
     private static int counter;

@@ -3,6 +3,7 @@ package be.intecbrussel.exercise10_07_part1;
 public class Triangle extends Shape{
     public static final int ANGLES = 3;
     private static int count;
+
     private int height;
     private int width;
     private int perpendicular;
@@ -16,7 +17,9 @@ public class Triangle extends Shape{
     }
 
     public Triangle(int w, int h, int p, int x, int y){
-        this.width = w;
+        setWidth(w);
+        setHeight(h);
+        setPerpendicular(p);
         this.height = h;
         this.perpendicular = p;
         super.setPosition(x, y);

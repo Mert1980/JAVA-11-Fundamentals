@@ -8,28 +8,28 @@ public class IsoScelesTriangle extends Triangle{
     }
 
     public IsoScelesTriangle(int w, int h){
-        this(w, h, 1, 1);
+        super(h, w, w/2);
     }
 
     public IsoScelesTriangle(int w, int h, int x, int y){
-        this.setWidth(w);
-        super.setHeight(h);
-        super.setPosition(x, y);
+        super(h, w, w/2, x, y);
         count++;
     }
 
     public IsoScelesTriangle(IsoScelesTriangle triangle){
-        this(triangle.getWidth(), triangle.getHeight(), triangle.getX(), triangle.getY());
+        super(triangle);
     }
 
     @Override
     public void setWidth(int w) {
         super.setWidth(w);
+        super.setPerpendicular(w/2);
     }
 
     @Override
     public void setPerpendicular(int perpendicular) {
         super.setPerpendicular(perpendicular);
+        this.setWidth(perpendicular * 2);
     }
 
     public static int getCount() {
