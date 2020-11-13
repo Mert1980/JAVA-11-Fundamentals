@@ -37,20 +37,22 @@ public class Drawing {
     }
 
     private boolean isPresent(Shape shape){
+        return findIndexOfShape(shape) != -1;
+    }
+
+    private int findIndexOfShape(Shape shape){
         for (int i = 0; i < this.shapes.length; i++) {
-                if(this.shapes[i] != null && this.shapes[i].equals(shape)){
-                    return true;
-                }
+            if(this.shapes[i] != null && this.shapes[i].equals(shape)){
+                return i;
             }
-        return false;
+        }
+        return -1;
     }
 
     private int getFreeLocation(){
-        int freeLocation = 0;
         for (int i = 0; i < this.shapes.length; i++) {
             if(this.shapes[i] == null){
-                freeLocation = i;
-                return freeLocation;
+                return i;
             }
         }
         return -1;
@@ -63,15 +65,6 @@ public class Drawing {
         // move the last shape to the index of removed
         adjustArray(index);
         this.size--;
-    }
-
-    private int findIndexOfShape(Shape shape){
-        for (int i = 0; i < this.shapes.length; i++) {
-            if(this.shapes[i] != null && this.shapes[i].equals(shape)){
-                return i;
-            }
-        }
-        return -1;
     }
 
     public void adjustArray(int index){
@@ -94,11 +87,7 @@ public class Drawing {
     }
 
     public void clear(){
-        int index = 0;
-        while(index < this.shapes.length && this.shapes[index] != null ){
-            this.shapes[index] = null;
-            index+=1;
-        }
+        Arrays.fill(this.shapes, null);
         this.size = 0;
     }
 
