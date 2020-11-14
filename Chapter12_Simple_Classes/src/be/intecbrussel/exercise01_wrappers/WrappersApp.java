@@ -1,6 +1,4 @@
-package be.intecbrussel.wrappers;
-
-import java.util.Scanner;
+package be.intecbrussel.exercise01_wrappers;
 
 public class WrappersApp {
     public static void main(String[] args) {
