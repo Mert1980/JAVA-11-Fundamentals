@@ -9,4 +9,12 @@ public interface Scaleable {
     // Methods
     public abstract void scale(int factor);
 
+    // Default Methods
+    public default void scaleDouble(){
+        scale(DOUBLE);
+    }
+
+    public default void scaleHalf(){
+        scale(HALF);
+    }
 }

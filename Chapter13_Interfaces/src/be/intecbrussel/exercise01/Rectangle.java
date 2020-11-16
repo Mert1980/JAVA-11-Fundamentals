@@ -53,12 +53,6 @@ public class Rectangle extends Shape implements Scaleable{
     }
 
     // METHODS
-    @Override
-    public void scale(int factor) {
-        setHeight((height * factor) / 100);
-        setWidth((width * factor) / 100);
-    }
-
     public double getArea(){
         return height * width;
     }
@@ -74,6 +68,27 @@ public class Rectangle extends Shape implements Scaleable{
 
     public static int getCount(){
         return count;
+    }
+
+    @Override
+    public void scale(int factor) {
+        setHeight((height * factor) / 100);
+        setWidth((width * factor) / 100);
+    }
+
+    @Override
+    public void scaleDouble() {
+        scale(DOUBLE);
+    }
+
+    @Override
+    public void scaleHalf() {
+        scale(HALF);
+    }
+
+    @Override
+    public void draw(DrawingContext dc) {
+        dc.draw(this);
     }
 
     @Override
@@ -114,4 +129,6 @@ public class Rectangle extends Shape implements Scaleable{
                 ", yPos=" + super.getY() +
                 '}';
     }
+
+
 }

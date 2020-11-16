@@ -1,6 +1,6 @@
 package be.intecbrussel.exercise01;
 
-public abstract class Shape {
+public abstract class Shape implements Drawable{
     private int xPos;
     private int yPos;
     private static int count = 0;
