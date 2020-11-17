@@ -1,10 +1,10 @@
 package be.intecbrussel.customer;
 
 public class CustomerFactory {
-    final static String[] customers = {"Mert", "Asena", "Kaan", "Almira"};
+    final static String[] CUSTOMERS = {"Mert", "Asena", "Kaan", "Almira"};
 
     public static AbstractCustomer getCustomer (String name){
-        for (String customerName:customers ) {
+        for (String customerName:CUSTOMERS ) {
             if(customerName.equalsIgnoreCase(name)){
                 return new RealCustomer(name);
             }
