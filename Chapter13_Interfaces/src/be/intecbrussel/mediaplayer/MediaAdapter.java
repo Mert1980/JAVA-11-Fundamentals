@@ -12,11 +12,11 @@ public class MediaAdapter implements MediaPlayer{
 
     @Override
     public void play(String audioType, String fileName) {
-        if(audioType.toLowerCase().contains("mp4")){
+        if(audioType.equalsIgnoreCase("mp4")){
             advancedMusicPlayer.playMp4(fileName);
-        } else if(audioType.toLowerCase().contains("vlc")){
+        } else if(audioType.equalsIgnoreCase("vlc")){
             advancedMusicPlayer.playVlc(fileName);
-        } else if(audioType.toLowerCase().contains("mp3")){
+        } else if(audioType.equalsIgnoreCase("mp3")){
                 System.out.println("Playing mp3 file. Name: " + fileName);
         } else {
             System.out.println("Invalid media. " + audioType + " is not supported");
