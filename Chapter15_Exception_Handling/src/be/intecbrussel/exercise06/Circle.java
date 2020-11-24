@@ -19,7 +19,7 @@ public class Circle extends Shape {
     }
 
     public Circle(int radius, int xPos, int yPos){
-        this.radius = radius;
+        setRadius(radius);
         super.setPosition(xPos, yPos);
     }
 
@@ -28,8 +28,9 @@ public class Circle extends Shape {
     }
 
     // setters
-    public void setRadius(int radius){
-        this.radius = radius;
+    public void setRadius(int radius) throws NegativeSizeException{
+        if(radius < 0 ) throw new NegativeSizeException("Negative radius");
+        else this.radius = radius;
     }
 
     // getters

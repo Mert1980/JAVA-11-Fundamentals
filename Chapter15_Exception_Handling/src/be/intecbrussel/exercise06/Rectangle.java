@@ -19,18 +19,18 @@ public class Rectangle extends Shape implements Scaleable{
         this(1, 1);
     }
 
-    public Rectangle(int height, int width){
+    public Rectangle(int height, int width) throws NegativeSizeException{
         this(height, width, 1, 1);
     }
 
-    public Rectangle(int height, int width, int xPos, int yPos){
-        this.height = height;
-        this.width = width;
+    public Rectangle(int height, int width, int xPos, int yPos) throws NegativeSizeException{
+        setHeight(height);
+        setWidth(width);
         super.setPosition(xPos, yPos);
         count++;
     }
 
-    public Rectangle(Rectangle rectangle){
+    public Rectangle(Rectangle rectangle) throws NegativeSizeException{
         this(rectangle.height, rectangle.width, rectangle.getX(), rectangle.getY());
     }
 
@@ -44,12 +44,14 @@ public class Rectangle extends Shape implements Scaleable{
     }
 
     // SETTERS
-    public void setWidth(int width){
-        this.width = width < 0 ? -width : width;
+    public void setWidth (int width) throws NegativeSizeException{
+        if(width < 0 ) throw new NegativeSizeException("Negative width");
+        else this.width = width;
     }
 
-    public void setHeight(int height){
-        this.height = height < 0 ? -height : height;
+    public void setHeight(int height) throws NegativeSizeException{
+        if(height < 0 ) throw new NegativeSizeException("Negative height");
+        else this.height = height;
     }
 
     // METHODS

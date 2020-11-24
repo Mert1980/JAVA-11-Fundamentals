@@ -11,40 +11,43 @@ public class Triangle extends Shape {
         this(1, 1, 1, 1, 1);
     }
 
-    public Triangle(int w, int h, int p){
+    public Triangle(int w, int h, int p) throws NegativeSizeException{
         this(w, h, p, 1, 1);
     }
 
-    public Triangle(int w, int h, int p, int x, int y){
-        this.width = w;
-        this.height = h;
-        this.perpendicular = p;
+    public Triangle(int w, int h, int p, int x, int y) throws NegativeSizeException{
+        setWidth(w);
+        setHeight(h);
+        setPerpendicular(p);
         super.setPosition(x, y);
         count++;
     }
 
-    public Triangle(Triangle triangle){
+    public Triangle(Triangle triangle) throws NegativeSizeException{
         this(triangle.getWidth(), triangle.getHeight(), triangle.getPerpendicular(), triangle.getX(), triangle.getY());
     }
 
-    public void setWidth(int w){
-        this.width = w;
+    public void setWidth(int w) throws NegativeSizeException{
+        if(w < 0 ) throw new NegativeSizeException("Negative width");
+        else this.width = w;
     }
 
     public int getWidth(){
         return this.width;
     }
 
-    public void setHeight(int h){
-        this.height = h;
+    public void setHeight(int h) throws NegativeSizeException{
+        if(h < 0 ) throw new NegativeSizeException("Negative width");
+        else this.height= h;
     }
 
     public int getHeight(){
         return this.height;
     }
 
-    public void setPerpendicular(int perpendicular) {
-        this.perpendicular = perpendicular;
+    public void setPerpendicular(int perpendicular) throws NegativeSizeException {
+        if(perpendicular < 0 ) throw new NegativeSizeException("Negative perpendicular");
+        else this.perpendicular = perpendicular;
     }
 
     public int getPerpendicular() {
