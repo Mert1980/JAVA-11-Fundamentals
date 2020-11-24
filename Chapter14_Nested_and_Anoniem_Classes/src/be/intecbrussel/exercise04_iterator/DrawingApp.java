@@ -1,4 +1,5 @@
 package be.intecbrussel.exercise04_iterator;
+import java.util.Iterator;
 
 public class DrawingApp {
     public static void main(String[] args) {
@@ -26,13 +27,19 @@ public class DrawingApp {
         myDrawing.draw(drawingContext);
 
         System.out.println("----------------------------------");
-        Drawing.DrawableIterator iterator = (Drawing.DrawableIterator) myDrawing.iterator();
+       // Drawing.DrawableIterator iterator = (Drawing.DrawableIterator) myDrawing.iterator();
+        Iterator iterator = myDrawing.new DrawableIterator(); // more simply
         while(iterator.hasNext()){
-            /*if(iterator.next() == null){
-                return;
-            }*/
-             System.out.println(iterator.next());
+            System.out.println(iterator.next());
         }
+
+        System.out.println("----------------------------------");
+
+        for (Object drawable:myDrawing
+             ) {
+            System.out.println(drawable);
+        }
+        
     }
 }
 

@@ -18,16 +18,22 @@ public class Drawing implements Drawable, Iterable{
     }
 
     class DrawableIterator implements Iterator {
-        private int index = 0;
+        private int index = -1;
 
         @Override
         public boolean hasNext() {
-            return this.index < getDrawables().length;
+            for (int i = index +1; i < getDrawables().length; i++) {
+                if(drawables[i] != null){
+                    index = i;
+                    return true;
+                }
+            }
+            return false;
         }
 
         @Override
         public Object next() {
-            return getDrawables()[index++];
+            return getDrawables()[index];
         }
     }
 
