@@ -1,12 +1,7 @@
 package be.intecbrussel.enumerations;
 
 public enum Color {
-    BLACK(0x00_00_00){
-        @Override
-        public String toString() {
-            return "Black";
-        }
-    },
+    BLACK(0x00_00_00),
     WHITE(0xFF_FF_FF),
     RED(0xFF_00_00),
     GREEN(0x00_FF_00),
