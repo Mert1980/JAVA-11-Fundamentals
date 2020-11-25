@@ -2,8 +2,9 @@ package be.intecbrussel.exercise06;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class Drawing implements Drawable, Iterable{
+public class Drawing extends RuntimeException implements Drawable, Iterable {
     private Drawable[] drawables;
     private int size; // holds the number of saved figures
 
@@ -21,11 +22,16 @@ public class Drawing implements Drawable, Iterable{
         private int index = -1;
 
         @Override
-        public boolean hasNext() {
-            for (int i = index +1; i < getDrawables().length; i++) {
-                if(drawables[i] != null){
+        public boolean hasNext() throws NoSuchElementException{
+            for (int i = index+1; i < getDrawables().length; i++) {
+                try{
                     index = i;
+                    if(next() == null){
+                        throw new NoSuchElementException("There is no figure");
+                    }
                     return true;
+                } catch (NoSuchElementException nse){
+                    System.out.println(nse.getMessage());
                 }
             }
             return false;
@@ -119,6 +125,10 @@ public class Drawing implements Drawable, Iterable{
     public void clear(){
         Arrays.fill(this.drawables, null);
         this.size = 0;
+    }
+
+    public void removeAtIndex(int index){
+        this.drawables[index] = null;
     }
 
     @Override

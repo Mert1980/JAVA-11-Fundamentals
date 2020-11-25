@@ -4,37 +4,18 @@ import java.util.Iterator;
 
 public class DrawingApp {
     public static void main(String[] args) {
-        Drawing myDrawing = new Drawing();
-        DrawingContext drawingContext = new TextDrawingContext();
 
+        Drawing myDrawing = new Drawing();
         myDrawing.add(new Circle(5, 5, 5));
         myDrawing.add(new Rectangle(10, 20, 1, 1));
-        myDrawing.add(new Square(30, 1, 1));
         myDrawing.add(new Triangle(10, 20, 20));
-        myDrawing.add(new IsoScelesTriangle(40, 60));
+        myDrawing.removeAtIndex(1);
 
-        myDrawing.draw(drawingContext);
-        System.out.println("------------------------------");
-
-        myDrawing.scaleDouble();
-        myDrawing.draw(drawingContext);
-        System.out.println("------------------------------");
-
-        myDrawing.add(new Circle());
-        myDrawing.draw(drawingContext);
-        System.out.println("------------------------------");
-
-        myDrawing.scaleHalf();
-        myDrawing.draw(drawingContext);
-
-        System.out.println("----------------------------------");
-       // Drawing.DrawableIterator iterator = (Drawing.DrawableIterator) myDrawing.iterator();
         Iterator iterator = myDrawing.new DrawableIterator(); // more simply
-        while(iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
 
-        System.out.println("----------------------------------");
+       /* while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }*/
 
         for (Object drawable:myDrawing
              ) {
@@ -44,10 +25,4 @@ public class DrawingApp {
     }
 }
 
-    /*Circle{PI=3.14, radius=5, xPos=5, yPos=5}
-    Rectangle{height=10, width=20, xPos=1, yPos=1}
-    Rectangle{height=30, width=30, xPos=1, yPos=1}
-    Triangle{height=20, width=10, perpendicular=20, xPos=1, yPos=1}
-    Triangle{height=60, width=40, perpendicular=1, xPos=1, yPos=1}
-    Circle{PI=3.14, radius=0, xPos=1, yPos=1}
-    */
+
