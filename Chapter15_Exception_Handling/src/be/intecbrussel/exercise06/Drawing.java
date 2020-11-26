@@ -22,24 +22,24 @@ public class Drawing extends RuntimeException implements Drawable, Iterable {
         private int index = -1;
 
         @Override
-        public boolean hasNext() throws NoSuchElementException{
-            for (int i = index+1; i < getDrawables().length; i++) {
-                try{
-                    index = i;
-                    if(next() == null){
-                        throw new NoSuchElementException("There is no figure");
-                    }
+        public boolean hasNext() {
+            for (int i = index +1; i < getDrawables().length; i++) {
+                if(drawables[i] != null){
                     return true;
-                } catch (NoSuchElementException nse){
-                    System.out.println(nse.getMessage());
-                }
+               }
             }
             return false;
         }
 
         @Override
-        public Object next() {
-            return getDrawables()[index];
+        public Object next() throws NoSuchElementException{
+            for (int i = index+1; i < getDrawables().length; i++) {
+                if(drawables[i] != null){
+                    index = i;
+                    return getDrawables()[i];
+                }
+            }
+            throw new NoSuchElementException("No figure left in the drawing");
         }
     }
 
