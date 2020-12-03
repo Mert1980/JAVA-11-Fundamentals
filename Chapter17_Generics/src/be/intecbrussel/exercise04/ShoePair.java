@@ -31,4 +31,9 @@ public class ShoePair<Shoe> implements Pair<Shoe>{
     public void setRight(Shoe right) {
         this.rightShoe = right;
     }
+
+    @Override
+    public String toString() {
+        return "ShoePair{" + "leftShoe=" + leftShoe + ", rightShoe=" + rightShoe + '}';
+    }
 }

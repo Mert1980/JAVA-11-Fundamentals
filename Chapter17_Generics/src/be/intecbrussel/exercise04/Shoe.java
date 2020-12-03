@@ -24,4 +24,9 @@ public class Shoe extends ShoePair{
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Shoe{" + "size=" + size + ", color='" + color + '\'' + '}';
+    }
 }
