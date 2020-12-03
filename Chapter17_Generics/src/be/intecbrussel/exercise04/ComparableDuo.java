@@ -1,6 +1,6 @@
 package be.intecbrussel.exercise04;
 
-public class ComparableDuo<T extends Number & Comparable<T>> extends Duo<T> {
+public class ComparableDuo<T extends Comparable<T>> extends Duo<T> {
     T first;
     T second;
 
@@ -16,7 +16,7 @@ public class ComparableDuo<T extends Number & Comparable<T>> extends Duo<T> {
         return getFirst().compareTo(getSecond()) < 0 ? getFirst() : getSecond();
     }
 
-    public int getSum(){
+    /*public int getSum(){
         return getFirst().intValue() + getSecond().intValue();
-    }
+    }*/
 }
