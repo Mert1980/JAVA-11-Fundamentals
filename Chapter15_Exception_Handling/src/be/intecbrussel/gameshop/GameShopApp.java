@@ -1,5 +1,7 @@
 package be.intecbrussel.gameshop;
 
+import be.intecbrussel.gameshop.exceptions.GameShopException;
+
 import java.time.LocalDate;
 
 public class GameShopApp {
@@ -20,21 +22,21 @@ public class GameShopApp {
         try {
             game = gameShop.buyGame(GameShop.Game.CALL_OF_DUTY.getName(), mert);
             mert.play(game);
-        } catch (Exception e) {
+        } catch (GameShopException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(), mert);
             mert.play(game);
-        } catch (Exception e) {
+        } catch (GameShopException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(),mert);
             mert.play(game);
-        } catch (Exception e) {
+        } catch (GameShopException e) {
             System.out.println(e.getMessage());
         }
     }

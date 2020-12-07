@@ -1,6 +1,6 @@
 package be.intecbrussel.gameshop.exceptions;
 
-public class EmptyStockException extends Exception {
+public class EmptyStockException extends GameShopException {
     public EmptyStockException(){
         super();
     }
