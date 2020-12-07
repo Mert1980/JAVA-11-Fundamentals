@@ -19,13 +19,12 @@ public class GameShopApp {
         stock.setRobloxAmount(1);
 
         Client mert = new Client("Mert", LocalDate.of(2000, 06, 14));
-        mert.setMoney(200);
-        System.out.println(mert.getMoney());
-
+        mert.setMoney(20);
 
         GameShop.Game game = null;
         try {
             game = gameShop.buyGame(GameShop.Game.CALL_OF_DUTY.getName(), mert);
+            mert.play(game);
         } catch (GameNotFoundException e) {
             e.printStackTrace();
         } catch (TooYoungToGameException e) {
@@ -35,10 +34,11 @@ public class GameShopApp {
         } catch (NotEnoughMoneyException e) {
             e.printStackTrace();
         }
-        mert.play(game);
+
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(), mert);
+            mert.play(game);
         } catch (GameNotFoundException e) {
             e.printStackTrace();
         } catch (TooYoungToGameException e) {
@@ -48,10 +48,11 @@ public class GameShopApp {
         } catch (NotEnoughMoneyException e) {
             e.printStackTrace();
         }
-        mert.play(game);
+
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(),mert);
+            mert.play(game);
         } catch (GameNotFoundException e) {
             e.printStackTrace();
         } catch (TooYoungToGameException e) {
@@ -61,7 +62,5 @@ public class GameShopApp {
         } catch (NotEnoughMoneyException e) {
             e.printStackTrace();
         }
-        mert.play(game);
-
     }
 }
