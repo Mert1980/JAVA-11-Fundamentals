@@ -1,6 +1,6 @@
-package be.intecbrussel.gameshop;
+package be.intecbrussel.gameshop.exceptions;
 
-public class NotEnoughMoneyException extends RuntimeException {
+public class NotEnoughMoneyException extends Exception {
     public NotEnoughMoneyException(){
         super();
     }

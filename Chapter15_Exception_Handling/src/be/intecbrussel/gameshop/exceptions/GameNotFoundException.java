@@ -1,6 +1,6 @@
-package be.intecbrussel.gameshop;
+package be.intecbrussel.gameshop.exceptions;
 
-public class GameNotFoundException extends IllegalArgumentException{
+public class GameNotFoundException extends Exception{
     public GameNotFoundException(){
         super();
     }

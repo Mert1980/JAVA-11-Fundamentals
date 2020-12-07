@@ -1,6 +1,6 @@
-package be.intecbrussel.gameshop;
+package be.intecbrussel.gameshop.exceptions;
 
-public class EmptyStockException extends RuntimeException {
+public class EmptyStockException extends Exception {
     public EmptyStockException(){
         super();
     }

@@ -1,5 +1,10 @@
 package be.intecbrussel.gameshop;
 
+import be.intecbrussel.gameshop.exceptions.EmptyStockException;
+import be.intecbrussel.gameshop.exceptions.GameNotFoundException;
+import be.intecbrussel.gameshop.exceptions.NotEnoughMoneyException;
+import be.intecbrussel.gameshop.exceptions.TooYoungToGameException;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
@@ -14,8 +19,7 @@ public class GameShop {
         this.stock = new Stock();
     }
 
-    public Game buyGame(String gameName, Client client) throws EmptyStockException, GameNotFoundException,
-            TooYoungToGameException, NotEnoughMoneyException{
+    public Game buyGame(String gameName, Client client) throws EmptyStockException, GameNotFoundException, TooYoungToGameException, NotEnoughMoneyException {
 
         if(!isGameExist(gameName)){
             throw new GameNotFoundException(gameName + " is not found. Please check another game.");

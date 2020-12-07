@@ -1,6 +1,6 @@
-package be.intecbrussel.gameshop;
+package be.intecbrussel.gameshop.exceptions;
 
-public class TooYoungToGameException extends RuntimeException{
+public class TooYoungToGameException extends Exception{
     public TooYoungToGameException(){
         super();
     }
