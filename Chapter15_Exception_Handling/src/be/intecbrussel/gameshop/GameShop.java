@@ -19,23 +19,13 @@ public class GameShop {
         this.stock = new Stock();
     }
 
-    public Game buyGame(String gameName, Client client) throws EmptyStockException, GameNotFoundException, TooYoungToGameException, NotEnoughMoneyException {
+    public Game buyGame(String gameName, Client client) throws GameNotFoundException, TooYoungToGameException, EmptyStockException, NotEnoughMoneyException {
 
-        if(!isGameExist(gameName)){
-            throw new GameNotFoundException(gameName + " is not found. Please check another game.");
-        }
+        checkGame(gameName);
+        checkAge(client.getBirthday(), gameName);
+        checkStock(gameName);
+        checkMoney(client, gameName);
 
-        if(!isAgeValid(client.getBirthday())){
-            throw new TooYoungToGameException("Your age must be over 18 to play " + gameName);
-        }
-
-        if(!isInStock(gameName)){
-            throw new EmptyStockException(gameName + " is out of stock! Please check later.");
-        }
-
-        if(!hasEnoughMoney(client, gameName)){
-            throw new NotEnoughMoneyException("You don't have enough money to buy " + gameName);
-        }
 
         Game myGame = null;
         for (Game game:Game.values()
@@ -49,7 +39,7 @@ public class GameShop {
         return stock.gameSold(myGame);
     }
 
-    private boolean isInStock(String gameName)  {
+    private void checkStock(String gameName) throws EmptyStockException {
         String stockClassName = "be.intecbrussel.gameshop.Stock";
         Class<?> stockClass = null; // convert string classname to class
         try {
@@ -93,32 +83,36 @@ public class GameShop {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        return amount > 0;
+        if(amount <= 0){
+            throw new EmptyStockException(gameName + " is out of stock! Please check later.");
+        }
     }
 
-    private boolean isGameExist(String gameName){
+    private Game checkGame(String gameName) throws GameNotFoundException{
         for (Game game:Game.values()) {
             if(game.getName().equalsIgnoreCase(gameName)){
-                return true;
+                return game;
             }
         };
-        return false;
+        throw new GameNotFoundException(gameName + " is not found. Please check another game.");
     }
 
-    private boolean isAgeValid(LocalDate birthday){
+    private void checkAge(LocalDate birthday, String gameName) throws TooYoungToGameException {
         LocalDate nowDate = LocalDate.now();
         Period period = Period.between(birthday, nowDate);
-        return period.getYears() > 18;
+
+        if(period.getYears() < 18){
+            throw new TooYoungToGameException("Your age must be over 18 to play " + gameName);
+        }
     }
 
-    private boolean hasEnoughMoney(Client client, String gameName){
+    private void checkMoney(Client client, String gameName) throws NotEnoughMoneyException{
         for (Game game:Game.values()) {
             if(game.getName().equalsIgnoreCase(gameName)){
-
-                return client.getMoney() >= game.getPrice();
+                if(client.getMoney() >= game.getPrice()) return;
             }
         };
-        return false;
+        throw new NotEnoughMoneyException("You don't have enough money to buy " + gameName);
     }
 
     public void setStock(Stock stock) {

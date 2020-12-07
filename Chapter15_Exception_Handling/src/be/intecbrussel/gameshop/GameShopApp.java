@@ -1,5 +1,10 @@
 package be.intecbrussel.gameshop;
 
+import be.intecbrussel.gameshop.exceptions.EmptyStockException;
+import be.intecbrussel.gameshop.exceptions.GameNotFoundException;
+import be.intecbrussel.gameshop.exceptions.NotEnoughMoneyException;
+import be.intecbrussel.gameshop.exceptions.TooYoungToGameException;
+
 import java.time.LocalDate;
 
 public class GameShopApp {
@@ -15,15 +20,47 @@ public class GameShopApp {
 
         Client mert = new Client("Mert", LocalDate.of(2000, 06, 14));
         mert.setMoney(200);
+        System.out.println(mert.getMoney());
 
 
-        GameShop.Game game = gameShop.buyGame(GameShop.Game.CALL_OF_DUTY.getName(), mert);
+        GameShop.Game game = null;
+        try {
+            game = gameShop.buyGame(GameShop.Game.CALL_OF_DUTY.getName(), mert);
+        } catch (GameNotFoundException e) {
+            e.printStackTrace();
+        } catch (TooYoungToGameException e) {
+            e.printStackTrace();
+        } catch (EmptyStockException e) {
+            e.printStackTrace();
+        } catch (NotEnoughMoneyException e) {
+            e.printStackTrace();
+        }
         mert.play(game);
 
-        game = gameShop.buyGame(GameShop.Game.FIFA21.getName(), mert);
+        try {
+            game = gameShop.buyGame(GameShop.Game.FIFA21.getName(), mert);
+        } catch (GameNotFoundException e) {
+            e.printStackTrace();
+        } catch (TooYoungToGameException e) {
+            e.printStackTrace();
+        } catch (EmptyStockException e) {
+            e.printStackTrace();
+        } catch (NotEnoughMoneyException e) {
+            e.printStackTrace();
+        }
         mert.play(game);
 
-        game = gameShop.buyGame(GameShop.Game.FIFA21.getName(),mert);
+        try {
+            game = gameShop.buyGame(GameShop.Game.FIFA21.getName(),mert);
+        } catch (GameNotFoundException e) {
+            e.printStackTrace();
+        } catch (TooYoungToGameException e) {
+            e.printStackTrace();
+        } catch (EmptyStockException e) {
+            e.printStackTrace();
+        } catch (NotEnoughMoneyException e) {
+            e.printStackTrace();
+        }
         mert.play(game);
 
     }
