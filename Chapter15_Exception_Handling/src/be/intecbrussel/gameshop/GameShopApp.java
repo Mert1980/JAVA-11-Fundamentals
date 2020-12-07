@@ -1,10 +1,5 @@
 package be.intecbrussel.gameshop;
 
-import be.intecbrussel.gameshop.exceptions.EmptyStockException;
-import be.intecbrussel.gameshop.exceptions.GameNotFoundException;
-import be.intecbrussel.gameshop.exceptions.NotEnoughMoneyException;
-import be.intecbrussel.gameshop.exceptions.TooYoungToGameException;
-
 import java.time.LocalDate;
 
 public class GameShopApp {
@@ -13,7 +8,7 @@ public class GameShopApp {
         GameShop gameShop = new GameShop(new Human("Mustafa", LocalDate.of(1988, 06, 14)));
         Stock stock = new Stock();
         stock.setAvengersAmount(1);
-        stock.setCallOfDutyAmount(1);
+        stock.setCallOfDutyAmount(0);
         stock.setFifa21Amount(2);
         stock.setFortniteAmount(1);
         stock.setRobloxAmount(1);
@@ -25,42 +20,22 @@ public class GameShopApp {
         try {
             game = gameShop.buyGame(GameShop.Game.CALL_OF_DUTY.getName(), mert);
             mert.play(game);
-        } catch (GameNotFoundException e) {
-            e.printStackTrace();
-        } catch (TooYoungToGameException e) {
-            e.printStackTrace();
-        } catch (EmptyStockException e) {
-            e.printStackTrace();
-        } catch (NotEnoughMoneyException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(), mert);
             mert.play(game);
-        } catch (GameNotFoundException e) {
-            e.printStackTrace();
-        } catch (TooYoungToGameException e) {
-            e.printStackTrace();
-        } catch (EmptyStockException e) {
-            e.printStackTrace();
-        } catch (NotEnoughMoneyException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
 
         try {
             game = gameShop.buyGame(GameShop.Game.FIFA21.getName(),mert);
             mert.play(game);
-        } catch (GameNotFoundException e) {
-            e.printStackTrace();
-        } catch (TooYoungToGameException e) {
-            e.printStackTrace();
-        } catch (EmptyStockException e) {
-            e.printStackTrace();
-        } catch (NotEnoughMoneyException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
