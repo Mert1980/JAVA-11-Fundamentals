@@ -38,7 +38,7 @@ public class TextApp {
         System.out.println("Print the words in the text in small letters:");
         tp.printProcessedWords(String::toLowerCase);
 
-        TextPrinter tp2 = new TextPrinter("123 345 126 879");
+        TextPrinter tp2 = new TextPrinter("123234567 345234567 126234567 879564356");
         tp2.printNumberValues(BigDecimal::new);
         tp2.printSum(BigDecimal::new);
 

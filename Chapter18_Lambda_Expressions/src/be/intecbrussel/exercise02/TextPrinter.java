@@ -17,11 +17,11 @@ public class TextPrinter {
     }
 
     public void printSum(NumberParser parser){
-        int sum = 0;
+        BigDecimal total = new BigDecimal(0);
         for (String w : text.split(" ")) {
-            sum+=Integer.valueOf(w);
+            total = total.add(parser.parse(w));
         }
-        System.out.println("The total is " + sum);
+        System.out.println(total);
     }
 
     public void printProcessedWords(WordProcessor processor){
