@@ -1,6 +1,7 @@
 package be.intecbrussel.exercise04;
 
 import java.util.Arrays;
+import java.util.OptionalDouble;
 import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -47,9 +48,11 @@ public class StreamingApp {
         System.out.println("----".repeat(22));
 
         // print the average age and the min/max ages
-        Double averageAge = Stream.of(sa).mapToDouble(person -> person.getAge())
-                .average().getAsDouble();
-        System.out.println("Average age is " + averageAge);
+        OptionalDouble averageAge = Stream.of(sa).mapToDouble(person -> person.getAge())
+                .average();
+        if(averageAge.isPresent()){
+            System.out.println("Average age is " + averageAge.getAsDouble());
+        }
         System.out.println("----".repeat(22));
 
         Double minAge = Stream.of(sa).mapToDouble(person -> person.getAge())
@@ -68,9 +71,11 @@ public class StreamingApp {
         System.out.println("----".repeat(22));
 
         // print the average age and the min/max ages
-        Double averageWeight = Stream.of(sa).mapToDouble(person -> person.getWeight())
-                .average().getAsDouble();
-        System.out.println("Average weight is " + averageWeight);
+        OptionalDouble averageWeight = Stream.of(sa).mapToDouble(person -> person.getWeight())
+                .average();
+        if(averageWeight.isPresent()){
+            System.out.println("Average weight is " + averageWeight.getAsDouble());
+        }
         System.out.println("----".repeat(22));
 
         Double minWeight = Stream.of(sa).mapToDouble(person -> person.getWeight())
