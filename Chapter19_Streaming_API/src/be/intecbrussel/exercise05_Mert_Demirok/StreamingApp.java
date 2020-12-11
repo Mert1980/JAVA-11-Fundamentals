@@ -16,19 +16,22 @@ public class StreamingApp {
         System.out.println("\n----------------------------------------------");
 
         // Create a stream that will divide each integer in the array by 2 and collect the new stream in a new array
-        double[] doubles = IntStream.of(numbers).mapToDouble(number -> 1.0 * number/2).toArray();
+        double[] doubles = IntStream.of(numbers).mapToDouble(number -> 1.0 * number/2)
+                                                .toArray();
         DoubleStream.of(doubles).forEach(number -> System.out.print(number + " "));
         System.out.println("\n-----------------------------------------------");
 
         //Create a stream that will capitalize the first two strings and then combine the 2 strings to 1 string.
         String text = Stream.of(colors).limit(2)
-                                        .map(color -> color.toUpperCase())
+                                        .map(String::toUpperCase)
                                         .reduce("", (acc, el) -> acc + el + " ");
         System.out.print(text);
         System.out.println("\n-----------------------------------------------");
 
         // Create a stream that will calculate the sum of all integers in the array, except the first 2 integers.
-        int sum = IntStream.of(numbers).skip(2).sum();
+        int sum = IntStream.of(numbers)
+                            .skip(2)
+                            .sum();
         System.out.println(sum);
         System.out.println("-----------------------------------------------");
 
@@ -41,9 +44,12 @@ public class StreamingApp {
     }
 
     private static boolean convertableToInt(String number){
-        if(Integer.valueOf(number) == null){
+        try{
+            Integer.valueOf(number);
+            return true;
+        } catch (NumberFormatException nfe){
             return false;
         }
-        return true;
+
     }
 }
