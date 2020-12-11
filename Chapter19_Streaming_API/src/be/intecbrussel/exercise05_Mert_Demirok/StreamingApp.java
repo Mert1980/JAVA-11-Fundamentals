@@ -9,12 +9,12 @@ public class StreamingApp {
         int[] numbers = {2, 4, 44, 23, 54, 7, 45, 99, 33, 12};
         String[] colors = {"green", "blue", "orange", "white", "yellow"};
 
-
         // Create a stream that will multiply each integer by 5 and then print it if the integer is greater than 50.
         IntStream.of(numbers).map(number -> number * 5)
                             .filter(number -> number>50)
                             .forEach(number -> System.out.print(number + " "));
         System.out.println("\n----------------------------------------------");
+
         // Create a stream that will divide each integer in the array by 2 and collect the new stream in a new array
         double[] doubles = IntStream.of(numbers).mapToDouble(number -> 1.0 * number/2).toArray();
         DoubleStream.of(doubles).forEach(number -> System.out.print(number + " "));
