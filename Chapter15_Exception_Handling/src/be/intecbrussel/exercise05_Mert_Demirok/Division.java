@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise05;
+package be.intecbrussel.exercise05_Mert_Demirok;
 
 import java.util.Scanner;
 

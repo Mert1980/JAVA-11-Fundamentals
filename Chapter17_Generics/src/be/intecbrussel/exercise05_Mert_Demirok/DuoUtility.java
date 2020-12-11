@@ -1,10 +1,6 @@
-package be.intecbrussel.exercise05;
+package be.intecbrussel.exercise05_Mert_Demirok;
 
 import be.intecbrussel.exercise04.Duo;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collection;
 
 public interface DuoUtility {
     public static void printDuo(Duo<?> d){
