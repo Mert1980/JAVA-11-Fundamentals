@@ -23,7 +23,7 @@ public class StreamingApp {
         //Create a stream that will capitalize the first two strings and then combine the 2 strings to 1 string.
         String text = Stream.of(colors).limit(2)
                                         .map(color -> color.toUpperCase())
-                                        .reduce("", (acc, el) -> acc + el + " ").toUpperCase();
+                                        .reduce("", (acc, el) -> acc + el + " ");
         System.out.print(text);
         System.out.println("\n-----------------------------------------------");
 
