@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/Chapter17_Generics/Chapter17_Generics.iml" filepath="$PROJECT_DIR$/Chapter17_Generics/Chapter17_Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter18_Lambda_Expressions/Chapter18_Lambda_Expressions.iml" filepath="$PROJECT_DIR$/Chapter18_Lambda_Expressions/Chapter18_Lambda_Expressions.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter19_Streaming_API/Chapter19_Streaming_API.iml" filepath="$PROJECT_DIR$/Chapter19_Streaming_API/Chapter19_Streaming_API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collections/Collections.iml" filepath="$PROJECT_DIR$/Collections/Collections.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA-11-Fundamentals.iml" filepath="$PROJECT_DIR$/JAVA-11-Fundamentals.iml" />
     </modules>
   </component>
