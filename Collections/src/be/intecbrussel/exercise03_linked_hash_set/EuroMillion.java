@@ -1,16 +1,13 @@
-package be.intecbrussel.exercise02_hashset;
+package be.intecbrussel.exercise03_linked_hash_set;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class EuroMillion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        Set<Integer> numbers = new HashSet<>();
-        Set<Integer> luckyNumbers = new HashSet<>();
+        Set<Integer> numbers = new LinkedHashSet<>();
+        Set<Integer> luckyNumbers = new LinkedHashSet<>();
         int count = 0;
 
         while(true){
@@ -43,9 +40,7 @@ public class EuroMillion {
                 break;
             }
         }
-
-        numbers.forEach(number -> System.out.print(number + " ")); // the print order is different than the entry order
-
+        numbers.forEach(number -> System.out.print(number + " ")); // the print order is same with the entry order
         showResults(numbers, luckyNumbers);
 
     }
