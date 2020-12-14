@@ -1,11 +1,12 @@
 package be.intecbrussel.exercise02_hashset;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 public class HashSetApp3 {
     public static void main(String[] args) {
-        Set<Person> personSet = new HashSet<>();
+        Collection<Person> personSet = new HashSet<>();
 
         Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
         Person person2 = new Person("Asena", "Demirok", "female", 39, 72.4, 165);
