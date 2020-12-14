@@ -7,8 +7,8 @@ import java.util.Queue;
 public class BurgerApp {
     public static void main(String[] args) {
 
-        Queue<BurgerOrder> orders = new LinkedList<>();
-        orders.offer(new BurgerOrder("BigMacMenu", 2));
+        Queue<BurgerOrder> orders = new PriorityQueue<>();
+        orders.offer(new BurgerOrder("BigMacMenu", 4));
         orders.offer(new BurgerOrder("ChickenMenu", 1));
         orders.offer(new BurgerOrder("VegiMenu", 3));
         orders.offer(new BurgerOrder("KidsMenu", 2));

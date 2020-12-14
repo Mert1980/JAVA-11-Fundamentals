@@ -1,6 +1,6 @@
 package be.intecbrussel.exercise05_queue;
 
-public class BurgerOrder {
+public class BurgerOrder implements Comparable<BurgerOrder>{
     private String name;
     private int number;
 
@@ -28,5 +28,10 @@ public class BurgerOrder {
     @Override
     public String toString() {
         return  number + " " + name;
+    }
+
+    @Override
+    public int compareTo(BurgerOrder o) {
+        return this.getNumber() - o.getNumber();
     }
 }
