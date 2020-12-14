@@ -4,7 +4,7 @@ import java.util.*;
 
 public class HashSetApp {
     public static void main(String[] args) {
-        Set<Integer> list = new HashSet<>();
+        Collection<Integer> list = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
 
         while(true){
@@ -29,18 +29,18 @@ public class HashSetApp {
         }
     }*/
 
-    public static void printList(Set<Integer> list){
+    public static void printList(Collection<Integer> list){
         list.forEach(number -> System.out.print(number + " "));
     }
 
-    public static void printSum(Set<Integer> list){
+    public static void printSum(Collection<Integer> list){
         int sum = list.stream().mapToInt(Integer::intValue).sum();
         System.out.println("The sum is " + sum);
     }
 
-    public static void printAverage(Set<Integer> list){
+    public static void printAverage(Collection<Integer> list){
         OptionalDouble average = list.stream()
-                .mapToDouble(number -> number.doubleValue())
+                .mapToDouble(number -> number)
                 .average();
         if(average.isPresent()){
             System.out.println("The average is " +  average.getAsDouble());

@@ -41,7 +41,7 @@ public class ListApp {
 
     public static void printAverage(List<Integer> list){
         OptionalDouble average = list.stream()
-                .mapToDouble(number -> number.doubleValue())
+                .mapToDouble(Integer::doubleValue)
                 .average();
         if(average.isPresent()){
             System.out.println("The average is " +  average.getAsDouble());
