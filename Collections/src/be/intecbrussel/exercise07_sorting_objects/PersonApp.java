@@ -7,12 +7,16 @@ import java.util.TreeSet;
 public class PersonApp {
     public static void main(String[] args) {
         // causes ClassCastException if Comparable Interface is not implemented
-        Collection<Person> personSet = new TreeSet<>(new Comparator<Person>() {
+        /*Collection<Person> personSet = new TreeSet<>(new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
                 return (int)o1.getWeight() - (int)o2.getWeight();
             }
-        });
+        });*/
+
+        // Change the anonymous nested Comparator Class with Lambda Expression
+        Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
+
 
         Person person1 = new Person("Mert", "Demirok", "male", 40, 22.4, 182);
         Person person2 = new Person("Asena", "Bekci", "female", 39, 72.4, 165);
