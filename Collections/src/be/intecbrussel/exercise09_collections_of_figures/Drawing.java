@@ -28,7 +28,7 @@ public class Drawing extends RuntimeException implements Drawable {
     }
 
     public void clear(){
-        this.drawables.removeAll(drawables);
+        this.drawables.clear();
     }
 
     public void removeAtIndex(int index){
@@ -60,6 +60,4 @@ public class Drawing extends RuntimeException implements Drawable {
                 ", size=" + this.drawables.size() +
                 '}';
     }
-
-
 }

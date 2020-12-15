@@ -10,23 +10,23 @@ public class PersonApp {
         /*Collection<Person> personSet = new TreeSet<>(new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
-                return (int)o1.getWeight() - (int)o2.getWeight();
+                return Double.compare(o1.getWeight(), o2.getWeight());
             }
         });*/
 
         // Change the anonymous nested Comparator Class with Lambda Expression
-        // Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
+        // Collection<Person> personSet = new TreeSet<>(((o1, o2) -> Double.compare(o1.getWeight(), o2.getWeight())));
 
         // Use static method of Comparator to sort persons
         // Collection<Person> personSet = new TreeSet<>((Comparator.comparingDouble(o -> o.getWeight())));
+        // Collection<Person> personSet = new TreeSet<>((Comparator.comparingDouble(Person::getWeight)));
 
-        //  Compare persons according to their age, name and weight
+        // Compare persons according to their age, name and weight
         Collection<Person> personSet = new TreeSet<>((Comparator
                 .comparingInt(Person::getAge)
                 .thenComparing(Person::getLastName)
                 .thenComparingDouble(Person::getWeight)));
         Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
-
         Person person2 = new Person("Asena", "Demirok", "female", 39, 72.4, 165);
         Person person3 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
         Person person4 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
