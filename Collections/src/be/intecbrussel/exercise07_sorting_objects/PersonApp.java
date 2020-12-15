@@ -18,16 +18,29 @@ public class PersonApp {
         // Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
 
         // Use static method of Comparator to sort persons
-        Collection<Person> personSet = new TreeSet<>((Comparator.comparingInt(o -> (int) o.getWeight())));
+        // Collection<Person> personSet = new TreeSet<>((Comparator.comparingInt(o -> (int) o.getWeight())));
 
+        //  Compare persons according to their age, name and weight
+        Collection<Person> personSet = new TreeSet<>((Comparator
+                .comparingInt(Person::getAge)
+                .thenComparing(Person::getLastName)
+                .thenComparing(Person::getWeight)));
         Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
-        Person person2 = new Person("Asena", "Bekci", "female", 39, 72.4, 165);
+
+        Person person2 = new Person("Asena", "Demirok", "female", 39, 72.4, 165);
         Person person3 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
         Person person4 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
+        Person person5 = new Person("Almira", "Demirok", "female", 3, 17.4, 54);
+        Person person6 = new Person("Hakan", "Demirok", "male", 40, 70.4, 182);
+        Person person7 = new Person("Hasan", "Kus", "male", 40, 85.4, 182);
+
         personSet.add(person1);
         personSet.add(person2);
         personSet.add(person3);
         personSet.add(person4);
+        personSet.add(person5);
+        personSet.add(person6);
+        personSet.add(person7);
 
         personSet.forEach(System.out::println); // order of the elements are different from the entry order
     }
