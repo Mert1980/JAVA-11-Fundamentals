@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class PersonApp {
     public static void main(String[] args) {
-        Collection<Person> personSet = new TreeSet<>(); // causes ClassCastException if Comparable Interface is not
+        Collection<Person> personSet = new TreeSet<>(new AgeComparator()); // causes ClassCastException if Comparable Interface is not
         // implemented
 
         Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
