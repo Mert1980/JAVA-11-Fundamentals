@@ -1,7 +1,5 @@
 package be.intecbrussel.exercise09_collections_of_figures;
 
-import java.util.Iterator;
-
 public class DrawingApp {
     public static void main(String[] args) {
 
@@ -10,20 +8,13 @@ public class DrawingApp {
         myDrawing.add(new Rectangle(10, 20, 1, 1));
         myDrawing.add(new Triangle(10, 20, 20));
         myDrawing.add(new Square(7, 1, 1));
+        myDrawing.add(new Square(7, 1, 1));
 
-        Iterator iterator = myDrawing.new DrawableIterator(); // more simply
+        myDrawing.getDrawables().forEach(shape -> System.out.println(shape));
 
-        while(iterator.hasNext()){
-            try{
-                System.out.println(iterator.next());
-            } catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-        }
-        /*for (Object drawable:myDrawing
-             ) {
-            System.out.println(drawable);
-        }*/
+        myDrawing.removeAtIndex(0);
+        System.out.println();
+        myDrawing.getDrawables().forEach(shape -> System.out.println(shape));
     }
 }
 
