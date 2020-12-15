@@ -15,10 +15,12 @@ public class PersonApp {
         });*/
 
         // Change the anonymous nested Comparator Class with Lambda Expression
-        Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
+        // Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
 
+        // Use static method of Comparator to sort persons
+        Collection<Person> personSet = new TreeSet<>((Comparator.comparingInt(o -> (int) o.getWeight())));
 
-        Person person1 = new Person("Mert", "Demirok", "male", 40, 22.4, 182);
+        Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
         Person person2 = new Person("Asena", "Bekci", "female", 39, 72.4, 165);
         Person person3 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
         Person person4 = new Person("Yigit", "Aslan", "male", 12, 40.4, 154);
