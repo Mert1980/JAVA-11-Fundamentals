@@ -18,13 +18,13 @@ public class PersonApp {
         // Collection<Person> personSet = new TreeSet<>(((o1, o2) -> (int)o1.getWeight() - (int)o2.getWeight()));
 
         // Use static method of Comparator to sort persons
-        // Collection<Person> personSet = new TreeSet<>((Comparator.comparingInt(o -> (int) o.getWeight())));
+        // Collection<Person> personSet = new TreeSet<>((Comparator.comparingDouble(o -> o.getWeight())));
 
         //  Compare persons according to their age, name and weight
         Collection<Person> personSet = new TreeSet<>((Comparator
                 .comparingInt(Person::getAge)
                 .thenComparing(Person::getLastName)
-                .thenComparing(Person::getWeight)));
+                .thenComparingDouble(Person::getWeight)));
         Person person1 = new Person("Mert", "Demirok", "male", 40, 82.4, 182);
 
         Person person2 = new Person("Asena", "Demirok", "female", 39, 72.4, 165);
