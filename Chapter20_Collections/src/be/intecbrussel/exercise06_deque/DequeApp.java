@@ -1,11 +1,12 @@
 package be.intecbrussel.exercise06_deque;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class DequeApp {
     public static void main(String[] args) {
-        Deque<Person> persons = new LinkedList<>();
+        Deque<Person> persons = new ArrayDeque<>();
         persons.offerFirst(new Person("Mert", Person.Gender.MALE));
         persons.offerFirst(new Person("John", Person.Gender.MALE));
         persons.offerFirst(new Person("Matt", Person.Gender.MALE));
