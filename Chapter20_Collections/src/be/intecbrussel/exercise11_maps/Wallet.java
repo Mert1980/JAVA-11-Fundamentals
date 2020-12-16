@@ -15,8 +15,9 @@ public class Wallet {
         wallet.forEach((k,v) -> System.out.println( k + ": " + v));
 
         double sum = wallet.keySet().stream()
-                .map(coin -> wallet.get(coin)*coin.getValue())
-                .reduce(0.0, (acc, el) -> acc + el);
+                .mapToDouble(coin -> wallet.get(coin)*coin.getValue())
+                .sum();
+
         System.out.println(sum);
 
         wallet.keySet().stream()
