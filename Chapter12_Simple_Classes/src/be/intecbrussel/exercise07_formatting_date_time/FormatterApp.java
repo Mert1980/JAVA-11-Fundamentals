@@ -7,14 +7,21 @@ import java.util.Scanner;
 
 public class FormatterApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        String date = "2017-03-08 12:30:54";
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime dateTime = LocalDateTime.parse(date, format);
+
+        System.out.println("origional date as string: " + date);
+        System.out.println("generated LocalDateTime: " + dateTime);
+
+        /*Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a date (DD/MM/YYYY): ");
 
         String date = scanner.nextLine();
-       // LocalDate inputDate = LocalDate.parse(date);
-        //System.out.println(inputDate);
+        LocalDate localDate = LocalDate.parse(date);
+        System.out.println(localDate);*/
 
-        DateTimeFormatter DateFormatter2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        /*DateTimeFormatter DateFormatter2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
         DateTimeFormatter DateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -31,7 +38,7 @@ public class FormatterApp {
         LocalDateTime now = LocalDateTime.now();
         //System.out.println(now);
         System.out.format("%1$td/%1$tm/%1$tY %1$tH:%1$tM:%1$tS", now);
-        // Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '$'
+        // Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '$'*/
 
     }
 }
