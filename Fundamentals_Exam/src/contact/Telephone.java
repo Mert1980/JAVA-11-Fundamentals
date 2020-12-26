@@ -35,4 +35,9 @@ public class Telephone {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return number;
+    }
 }

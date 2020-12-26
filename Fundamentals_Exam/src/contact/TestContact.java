@@ -2,8 +2,9 @@ package contact;
 
 public class TestContact {
     public static void main(String[] args) {
-        Telephone telephone = new Telephone("048990763", "Fixed");
 
-        System.out.println(telephone.isValidNumber());
+        ContactDetails contactDetails = new ContactDetails("mertdemirok@gmail.com", "0489994020", "016456776");
+        System.out.println(contactDetails);
+
     }
 }
