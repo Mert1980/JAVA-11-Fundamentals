@@ -7,22 +7,23 @@ public class Telephone {
     private String type;
 
     public Telephone(String number, String type) {
-        this.number = number;
         this.type = type;
+        isValidNumber(number);
+        this.number = number;
     }
 
-    public boolean isValidNumber(){
+    public boolean isValidNumber(String number) throws InvalidPhoneNumberException{
         if(!number.startsWith("0")){
-            return false;
+            throw new InvalidPhoneNumberException("Invalid number. Number should start with 0");
         }
 
         int numberOfDigits = number.length();
-        if(type.equalsIgnoreCase("mobile") && numberOfDigits == 10){
-            return true;
+        if(type.equalsIgnoreCase("mobile") && numberOfDigits != 10){
+            throw new InvalidPhoneNumberException("Invalid GSM number. Should be 10 digits.");
         }
 
-        if(type.equalsIgnoreCase("fixed") && numberOfDigits == 9){
-            return true;
+        if(type.equalsIgnoreCase("fixed") && numberOfDigits != 9){
+            throw new InvalidPhoneNumberException("Invalid phone number. Should be 9 digits.");
         }
 
         return false;
