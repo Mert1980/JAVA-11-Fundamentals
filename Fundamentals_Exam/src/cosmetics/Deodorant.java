@@ -1,4 +1,4 @@
-package brandproducts;
+package cosmetics;
 
 public class Deodorant extends Product{
     private DeoType deoType;

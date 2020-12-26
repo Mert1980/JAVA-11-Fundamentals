@@ -1,4 +1,4 @@
-package brandproducts;
+package cosmetics;
 
 import java.util.Comparator;
 
