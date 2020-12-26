@@ -9,8 +9,13 @@ public class RandomApp {
         Scanner kbd = new Scanner(System.in);
         int[] dice = new int[6];
 
-        System.out.println("How many times do you want to throw the dice?");
+        System.out.println("How many times do you want to throw the dice? (min 20)");
         int number = kbd.nextInt();
+
+        if(number < 20){
+            System.out.println("Enter a number above 20");
+            number = kbd.nextInt();
+        }
 
         for (int i = 0; i < number; i++) {
             throwDice(random, dice);
