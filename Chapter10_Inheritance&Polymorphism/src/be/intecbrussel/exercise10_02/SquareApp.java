@@ -14,5 +14,6 @@ public class SquareApp {
         sq.setPosition(3, 3);
         System.out.println(sq.getX()); // prints 3
         System.out.println(sq.getY()); // prints 3
+        System.out.println(Square.getCount()); // prints 1
     }
 }

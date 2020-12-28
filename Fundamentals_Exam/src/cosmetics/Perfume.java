@@ -1,8 +1,8 @@
 package cosmetics;
 
-public class Parfume extends Product {
+public class Perfume extends Product {
 
-    public Parfume(int productNumber, String brand, String name, int volume, double price) {
+    public Perfume(int productNumber, String brand, String name, int volume, double price) {
         super(productNumber, brand, name, volume, price);
     }
 
