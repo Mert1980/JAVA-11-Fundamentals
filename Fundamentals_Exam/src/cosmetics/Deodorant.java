@@ -3,9 +3,13 @@ package cosmetics;
 public class Deodorant extends Product{
     private DeoType deoType;
 
-    public Deodorant(int productNumber, String brand, String name, int volume, double price, DeoType deoType) {
-        super(productNumber, brand, name, volume, price);
+    public Deodorant(String brand, String name, int volume, double price, DeoType deoType) {
+        super(brand, name, volume, price);
         this.deoType = deoType;
+    }
+
+    public DeoType getDeoType() {
+        return deoType;
     }
 
     @Override
@@ -15,7 +19,7 @@ public class Deodorant extends Product{
 
     @Override
     public String toString() {
-        return "Deodorant{" + "deoType=" + deoType + '}';
+        return super.toString() + ", deoType= " + deoType;
     }
 
     public enum DeoType{

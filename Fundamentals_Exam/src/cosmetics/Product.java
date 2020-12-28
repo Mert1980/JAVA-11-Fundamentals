@@ -9,8 +9,7 @@ public abstract class Product implements Comparable<Product> {
     private int volume;
     private double price;
 
-    public Product(int productNumber, String brand, String name, int volume, double price) {
-        this.productNumber = productNumber;
+    public Product(String brand, String name, int volume, double price) {
         this.brand = brand;
         this.name = name;
         this.volume = volume;
@@ -30,6 +29,21 @@ public abstract class Product implements Comparable<Product> {
         return volume;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public int getProductNumber() {
+        return productNumber;
+    }
+
+    // SETTERS
+
+
+    public void setProductNumber(int productNumber) {
+        this.productNumber = productNumber;
+    }
+
     public String getProductCode(){
         StringBuilder sb = new StringBuilder();
         String brandCode = getBrand().substring(0, 3);
@@ -40,17 +54,20 @@ public abstract class Product implements Comparable<Product> {
                 .trim().replace(" ", "_");
     };
 
-    public static Comparator<Product> sortByBrand(){
+    public static Comparator<Product> sortByBrandName(){
         return new Comparator<Product>(){
             @Override
             public int compare(Product o1, Product o2) {
-                return o1.getBrand().compareTo(o2.getBrand());
+                return o1.getBrand().toLowerCase().compareTo(o2.getBrand().toLowerCase());
             }
         };
     }
 
     @Override
     public String toString() {
-        return "Product{" + "productNumber=" + productNumber + ", brand='" + brand + '\'' + ", name='" + name + '\'' + ", volume=" + volume + ", price=" + price + '}';
+        String productCode = getProductCode();
+        return getProductNumber() + " brand='" + brand + '\''
+                + ", name='" + name + '\'' + ", volume=" + volume + ", price=" + price
+                + ", code= " + productCode;
     }
 }

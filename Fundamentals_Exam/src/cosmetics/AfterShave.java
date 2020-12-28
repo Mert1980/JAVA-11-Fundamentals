@@ -3,8 +3,8 @@ package cosmetics;
 public class AfterShave extends Product{
     private Sort afterShaveType;
 
-    public AfterShave(int productNumber, String brand, String name, int volume, double price, Sort afterShaveType) {
-        super(productNumber, brand, name, volume, price);
+    public AfterShave(String brand, String name, int volume, double price, Sort afterShaveType) {
+        super(brand, name, volume, price);
         this.afterShaveType = afterShaveType;
     }
 
@@ -15,7 +15,7 @@ public class AfterShave extends Product{
 
     @Override
     public String toString() {
-        return "AfterShave{" + "afterShaveType=" + afterShaveType + '}';
+        return super.toString() + ", afterShaveType= " + afterShaveType;
     }
 
     public enum Sort{
