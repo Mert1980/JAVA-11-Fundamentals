@@ -31,7 +31,8 @@ public class Order {
     }
 
     public void showByBrand(String brandName){
-        orders.stream().filter(product -> product.getBrand().equalsIgnoreCase(brandName))
+        orders.stream()
+                .filter(product -> product.getBrand().equalsIgnoreCase(brandName))
                 .forEach(brand -> System.out.println(brand));
     }
 
