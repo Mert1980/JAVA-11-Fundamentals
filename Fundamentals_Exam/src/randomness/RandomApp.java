@@ -12,7 +12,7 @@ public class RandomApp {
         System.out.println("How many times do you want to throw the dice? (min 20)");
         int number = kbd.nextInt();
 
-        if(number < 20){
+        while(number < 20){
             System.out.println("Enter a number above 20");
             number = kbd.nextInt();
         }
