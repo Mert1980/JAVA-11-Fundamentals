@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise02;
+package be.intecbrussel.exercise02_threads_with_lambda;
 
 public class PrinterAppRunnable {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise01;
+package be.intecbrussel.exercise01_creating_thread;
 
 public class PrintApp {
     public static void main(String[] args) {

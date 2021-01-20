@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise01;
+package be.intecbrussel.exercise01_creating_thread;
 
 public class PrintThread extends Thread{
     private char c;

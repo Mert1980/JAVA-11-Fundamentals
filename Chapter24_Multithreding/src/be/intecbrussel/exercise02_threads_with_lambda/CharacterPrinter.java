@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise02;
+package be.intecbrussel.exercise02_threads_with_lambda;
 
 public class CharacterPrinter implements Runnable{
     private char c;
