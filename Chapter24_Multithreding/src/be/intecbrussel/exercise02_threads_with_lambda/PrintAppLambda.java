@@ -1,5 +1,7 @@
 package be.intecbrussel.exercise02_threads_with_lambda;
 
+import javax.swing.plaf.TableHeaderUI;
+
 public class PrintAppLambda {
     public static void main(String[] args) {
         Thread thread1 = new Thread(()->print('c', 100));

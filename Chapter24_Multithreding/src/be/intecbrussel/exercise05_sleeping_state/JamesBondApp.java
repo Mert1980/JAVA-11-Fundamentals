@@ -12,7 +12,6 @@ public class JamesBondApp {
         } catch (InterruptedException e) {
             System.out.println("Disarmed!");
         }
-
         bomb.disarm();
     }
 }

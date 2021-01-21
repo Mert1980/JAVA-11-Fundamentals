@@ -10,7 +10,9 @@ public class PrintAppLambda {
         thread2.start();
 
         try {
-            Thread.sleep(470);
+            System.out.println(Thread.currentThread().getName());
+            Thread.sleep(470); // main thread?? ask Manu
+            System.out.println(Thread.currentThread().getName());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -34,6 +36,8 @@ public class PrintAppLambda {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println(Thread.currentThread().getName() + " :Interrupted");
+                //throw new RuntimeException("Terminated");
+
             }
         }
     }
