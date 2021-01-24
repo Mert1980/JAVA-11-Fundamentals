@@ -9,17 +9,17 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private LocalDate birthDay;
-    private transient Timer hearBeat;
+    private transient Timer hartBeat;
 
     public Person(String firstName, String lastName, LocalDate birthDay) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDay = birthDay;
-        hearBeat = new Timer(true);
-        hearBeat.scheduleAtFixedRate(new HeartBeat(), 0, 1000);
+        hartBeat = new Timer(true);
+        hartBeat.scheduleAtFixedRate(new HartBeat(), 0, 1000);
     }
 
-    private class HeartBeat extends TimerTask{
+    protected static class HartBeat extends TimerTask{
         @Override
         public void run() {
             System.out.println("*");
