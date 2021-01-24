@@ -24,7 +24,6 @@ public class CounterAppLambda {
         System.out.println(counter.getCount()); // 12231 before synchronized
                                                 // 20000 after synchronized
                                                 // 10000 after calling decrement method
-
     }
 
     private static void decrement(Counter counter, int number) {
