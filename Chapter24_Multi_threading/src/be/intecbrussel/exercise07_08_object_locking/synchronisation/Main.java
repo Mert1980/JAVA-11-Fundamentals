@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise07_object_locking.synchronisation;
+package be.intecbrussel.exercise07_08_object_locking.synchronisation;
 
 import java.util.HashSet;
 import java.util.Set;

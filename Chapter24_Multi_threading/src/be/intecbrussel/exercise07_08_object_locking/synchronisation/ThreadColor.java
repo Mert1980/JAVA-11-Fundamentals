@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise07_object_locking.synchronisation;
+package be.intecbrussel.exercise07_08_object_locking.synchronisation;
 
 public class ThreadColor {
     public static final String ANSI_RESET = "\u001B[0m";

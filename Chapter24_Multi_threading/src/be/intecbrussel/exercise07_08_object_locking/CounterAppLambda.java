@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise07_object_locking;
+package be.intecbrussel.exercise07_08_object_locking;
 
 public class CounterAppLambda {
     public static void main(String[] args) {
