@@ -4,12 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Main {
-/*
-Objects have intrinsic locks to monitor synchronization.
-Each thread uses its own copy of local variable
-and each copy has its own object that has its own lock, thread1 gets its copy and it
-continues executing and then thread 2 gets its copy and executes it.
- */
+    /*
+    Objects have intrinsic locks to monitor synchronization.
+    Each thread uses its own copy of local variable
+    and each copy has its own object that has its own lock, thread1 gets its copy and it
+    continues executing and then thread 2 gets its copy and executes it.
+     */
     public static void main(String[] args) {
         Countdown countdown = new Countdown();
 
@@ -29,7 +29,7 @@ class Countdown {
 
     public void doCountdown() {
         String color = ThreadColor.ANSI_BLUE; // consistent outcome without switch case
-                                              // results in interference of threads with switch case
+        // results in interference of threads with switch case
 
         Set<String> localReferenceVariable = new HashSet<String>(); // results in interference of threads
         Countdown instanceReferenceVariable = new Countdown(); // results in interference of threads

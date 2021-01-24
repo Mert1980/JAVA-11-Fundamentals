@@ -1,7 +1,5 @@
 package be.intecbrussel.exercise04_daemon_threads;
 
-import be.intecbrussel.exercise01_creating_thread.ThreadColors;
-
 public class PrintAppLambda {
     public static void main(String[] args) {
         Thread thread1 = new Thread(()->print(ThreadColors.ANSI_BLUE + "1", 100));

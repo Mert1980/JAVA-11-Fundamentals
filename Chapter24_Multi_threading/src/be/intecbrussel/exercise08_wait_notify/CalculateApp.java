@@ -1,4 +1,4 @@
-package be.intecbrussel.exercise08_wait_notify_all;
+package be.intecbrussel.exercise08_wait_notify;
 
 import java.util.Random;
 
