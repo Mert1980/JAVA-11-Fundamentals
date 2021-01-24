@@ -5,12 +5,14 @@ import java.util.Random;
 /*
 read and write methods are alternating access to the private String message; variable in the Message class for
 the two threads, Reader and Writer.
+
 In other words, when empty is true, the thread trying to access the read() method will be waiting while the
 thread trying to access the write() method will be setting message to the next message that was just read from
 the messages[] array. Then, when empty is changed to false at that point, the thread trying to access write() will
 be waiting while the other thread accesses read() and returns the current message to be printed to output.
 The empty variable switches back and forth between true and false to create an alternating wait/execute type of action.
 But this is happening in nanoseconds, which is the reason for the Random() object to simulate the wait period.
+
 Note for notify() and notifyAll(): We can use notify() method to give the notification for only one thread which is
 waiting for a particular object whereas by the help of notifyAll() methods we can give the notification to all waiting
 threads of a particular object. If multiple threads are waiting for the notification and we use notify() method then
