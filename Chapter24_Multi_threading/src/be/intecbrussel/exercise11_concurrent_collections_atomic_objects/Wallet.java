@@ -1,13 +1,14 @@
 package be.intecbrussel.exercise11_concurrent_collections_atomic_objects;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Wallet {
     public static void main(String[] args) {
-        Map<Coin, Integer> wallet = new LinkedHashMap<>();
+        ConcurrentHashMap<Coin, Integer> wallet = new ConcurrentHashMap<>();
         Thread thread1 = new Thread(()->sum(wallet));
-        Thread thread2 = new Thread(()->sum(wallet));
+
         wallet.put(Coin.ONE_CENT, 2);
         wallet.put(Coin.TWO_CENT, 3);
         wallet.put(Coin.FIVE_CENT, 8);
@@ -18,27 +19,17 @@ public class Wallet {
         wallet.put(Coin.TWO_EURO, 1);
 
         thread1.start();
-        thread2.start();
-
-        /*try {
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-
     }
 
     private static synchronized void sum(Map<Coin, Integer> wallet) {
-        int sum = 0;
+        AtomicInteger sum = new AtomicInteger(0);
         for(Coin c:wallet.keySet()){
             System.out.println(c.name() + " : " + wallet.get(c));
-            sum+=c.getValue() * wallet.get(c);
+            sum.addAndGet(c.getValue() * wallet.get(c));
         }
-        System.out.println((sum/100F) + "€"); // 14.08€
+        System.out.println((sum.get()/100F) + "€"); // 14.08€
     }
 }
-
 
 enum Coin{
     ONE_CENT(1),
