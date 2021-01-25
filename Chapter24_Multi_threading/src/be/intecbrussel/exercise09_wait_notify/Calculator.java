@@ -37,6 +37,7 @@ public class Calculator {
         }
         busy =false;
         notifyAll();
+        System.out.println(Thread.currentThread().getName());
         return result;
     }
 

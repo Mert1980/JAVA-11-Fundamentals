@@ -21,7 +21,7 @@ public class CalculateApp {
         for (long i = 0; i < number ; i++) {
             int value = rand.nextInt(10);
             calc.setValue(value);
-
+            System.out.print(Thread.currentThread().getName() + " ");
             int result = calc.getResult();
             System.out.println(value + " : " + result);
 
