@@ -7,25 +7,19 @@ import java.util.Scanner;
 
 public class FormatterApp {
     public static void main(String[] args) {
-        String date = "2017-03-08 12:30:54";
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime dateTime = LocalDateTime.parse(date, format);
-
-        System.out.println("origional date as string: " + date);
-        System.out.println("generated LocalDateTime: " + dateTime);
-
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a date (DD/MM/YYYY): ");
 
-        String date = scanner.nextLine();
-        LocalDate localDate = LocalDate.parse(date);
-        System.out.println(localDate);*/
+        DateTimeFormatter f1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter f2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        /*DateTimeFormatter DateFormatter2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String dateInput = scanner.nextLine();
+        LocalDate localDate = LocalDate.parse(dateInput, f1);
 
-        DateTimeFormatter DateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        System.out.println(localDate.format(f2));
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
         // Parsing
